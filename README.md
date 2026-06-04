@@ -2,16 +2,19 @@
 
 A weekly operations dashboard for an engineer who is the sole owner of their company's identity/access systems. Provides a live IAM security news feed (powered by the Anthropic API with web search) and a rotating stick-figure comic strip.
 
+## How it works
+
+A GitHub Actions cron job runs **every Monday at 07:00 UTC**. It calls the Anthropic API (with web search) to fetch the latest IAM security news and generate a brand-new comic strip, then commits `public/feed.json` and `public/comics.json` to `main`. That commit triggers the deploy workflow, which builds and pushes to Cloudflare Workers. The browser just loads static JSON — the Anthropic key is never exposed to the browser.
+
 ## Features
 
-- **Live IAM feed** — CVEs, vendor advisories (Okta, Entra/Azure AD, Ping), credential/identity breaches, CISA/NCSC/NIST guidance
+- **Weekly IAM feed** — CVEs, vendor advisories (Okta, Entra/Azure AD, Ping), credential/identity breaches, CISA/NCSC/NIST guidance, refreshed every Monday
 - **Split view** — "Action required" items (highlighted, amber border) shown first, then "Latest in your area"
-- **Comic of the week** — 12 strips, weekly rotation, shuffle + Save as JPG
-- Feed and UI state persisted in `localStorage`
+- **Comic of the week** — starts with 12 seed strips; a new AI-generated strip is added each week, premises tracked so they never repeat; shuffle + Save as JPG
 
 ## Tech stack
 
-Vite + React 18, plain JavaScript. No CSS framework. Cloudflare Workers (serves the SPA and `/api/news`). All Anthropic calls happen server-side — the API key is never exposed to the browser.
+Vite + React 18, plain JavaScript. No CSS framework. Cloudflare Workers serves the SPA as pure static assets. The Anthropic API is only ever called from GitHub Actions — never from the browser or the Worker.
 
 ## Setup
 
@@ -25,26 +28,21 @@ Vite + React 18, plain JavaScript. No CSS framework. Cloudflare Workers (serves 
 
 ```bash
 npm install
+npm run dev   # http://localhost:5173
 ```
 
-Create a `.env.local` file (never commit this):
+The app loads `public/feed.json` and `public/comics.json` directly — no server needed for the frontend. The JSON files are already seeded in the repo, so the dashboard will show the seed data immediately.
 
-```
-# .env.local  — local dev only, never committed
-ANTHROPIC_API_KEY=sk-ant-...
-```
-
-Run the Vite dev server alongside a local Wrangler dev session:
+To run the content generator locally (requires your Anthropic key):
 
 ```bash
-# Terminal 1 — Vite (frontend hot-reload)
-npm run dev
-
-# Terminal 2 — Wrangler (Worker + /api/news)
-npx wrangler dev --port 8787
+export ANTHROPIC_API_KEY=sk-ant-...
+node scripts/generate-weekly.mjs
 ```
 
-Open the Vite URL (e.g. http://localhost:5173). For full end-to-end testing use the Wrangler URL (http://localhost:8787) after running `npm run build` first:
+This updates `public/feed.json` and appends a new strip to `public/comics.json`. Run `npm run dev` afterwards to see the result.
+
+For full end-to-end testing with Wrangler:
 
 ```bash
 npm run build
@@ -60,24 +58,24 @@ npm run build   # outputs to dist/
 
 ## Deployment (GitHub Actions → Cloudflare Workers)
 
-The workflow in `.github/workflows/deploy.yml` runs on every push to `main` (and manually via workflow_dispatch). It:
+Two workflows work together:
 
-1. Installs dependencies
-2. Runs `npm run build`
-3. Deploys to Cloudflare Workers via `wrangler deploy`
-4. Uploads `ANTHROPIC_API_KEY` as a Worker secret at deploy time
+| Workflow | Trigger | What it does |
+|----------|---------|-------------|
+| `weekly.yml` | Every Monday 07:00 UTC + manual | Calls Anthropic API, updates `public/feed.json` and `public/comics.json`, commits and pushes to `main` |
+| `deploy.yml` | Every push to `main` + manual | Runs `npm ci && npm run build`, deploys to Cloudflare Workers |
+
+The weekly job's push to `main` automatically triggers the deploy, so the live site is always up to date within minutes of the Monday update.
 
 ### Required GitHub Actions secrets
 
 Set these in your repository → Settings → Secrets and variables → Actions:
 
-| Secret | Where to get it |
-|--------|----------------|
-| `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com) — confirm web search is enabled for your org |
-| `CLOUDFLARE_API_TOKEN` | Cloudflare dashboard → My Profile → API Tokens — create a token with **Workers Scripts: Edit** permission |
-| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare dashboard → right sidebar on the Workers & Pages overview page |
-
-You can set them with the GitHub CLI (values are never stored in the repo):
+| Secret | Used by | Where to get it |
+|--------|---------|----------------|
+| `ANTHROPIC_API_KEY` | `weekly.yml` | [console.anthropic.com](https://console.anthropic.com) — confirm web search is enabled for your org |
+| `CLOUDFLARE_API_TOKEN` | `deploy.yml` | Cloudflare → My Profile → API Tokens → token with **Workers Scripts: Edit** |
+| `CLOUDFLARE_ACCOUNT_ID` | `deploy.yml` | Cloudflare → Workers & Pages overview → right sidebar |
 
 ```bash
 gh secret set ANTHROPIC_API_KEY
@@ -87,8 +85,9 @@ gh secret set CLOUDFLARE_ACCOUNT_ID
 
 ## Cost & usage notes
 
-- **Each feed refresh is one Anthropic API request** with web search enabled. Web search is a billed add-on — check your Anthropic usage dashboard.
-- The Worker is stateless. Caching happens entirely in the browser's `localStorage`.
+- **One Anthropic API call per week** — two requests per run (news feed + comic generation), both with web search enabled. Web search is a billed add-on; check your Anthropic usage dashboard.
+- Previously generated comics accumulate in `public/comics.json`. Each new strip's premises are fed back to the model so it picks a genuinely new angle every week.
+- The Cloudflare Worker only serves static files — no compute cost beyond the free tier in normal usage.
 
 ## Disclaimer
 
