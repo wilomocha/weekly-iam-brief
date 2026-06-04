@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 
-// ─── Design tokens injected as a <style> block ───────────────────────────────
+// ─── Design tokens ────────────────────────────────────────────────────────────
 const GLOBAL_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
   :root {
     --bg: #0d1014;
     --panel: #161b22;
@@ -49,17 +47,8 @@ const GLOBAL_CSS = `
   .spof-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); animation: pulse 2s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.75)} }
 
-  /* Controls */
-  .controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 20px 0 8px; }
-  .focus-wrap { position: relative; flex: 1; min-width: 260px; }
-  .focus-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
-  .focus-input { width: 100%; background: var(--panel); border: 1px solid var(--border); border-radius: 6px; color: var(--ink); font-family: var(--font-mono); font-size: 12px; padding: 8px 10px 8px 32px; outline: none; transition: border-color 0.15s; }
-  .focus-input:focus { border-color: var(--amber); }
-  .btn { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; color: var(--ink); font-family: var(--font-mono); font-size: 12px; padding: 8px 16px; cursor: pointer; transition: border-color 0.15s, color 0.15s; white-space: nowrap; }
-  .btn:hover { border-color: var(--amber); color: var(--amber); }
-  .btn-primary { background: rgba(246,168,33,0.12); border-color: rgba(246,168,33,0.4); color: var(--amber); }
-  .btn-primary:hover { background: rgba(246,168,33,0.2); }
-  .last-pulled { font-size: 11px; color: var(--muted); margin-bottom: 18px; }
+  /* Feed meta */
+  .feed-meta { font-size: 11px; color: var(--muted); margin: 18px 0 4px; }
 
   /* Sections */
   .section-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 14px; margin-top: 28px; }
@@ -87,7 +76,7 @@ const GLOBAL_CSS = `
 
   /* Error / empty */
   .error-card { background: rgba(248,115,107,0.08); border: 1px solid rgba(248,115,107,0.3); border-radius: 8px; padding: 16px; color: var(--red); margin-bottom: 10px; }
-  .empty-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 24px; color: var(--muted); text-align: center; margin-bottom: 10px; }
+  .empty-card { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 24px; color: var(--muted); text-align: center; margin-bottom: 10px; font-size: 12px; }
 
   /* Comic section */
   .comic-section { margin-top: 36px; }
@@ -97,6 +86,10 @@ const GLOBAL_CSS = `
   .comic-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
   .comic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; background: var(--paper-ink); border: 2px solid var(--paper-ink); border-radius: 6px; overflow: hidden; }
   .comic-panel svg { display: block; width: 100%; height: auto; }
+
+  .btn { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; color: var(--ink); font-family: var(--font-mono); font-size: 12px; padding: 8px 16px; cursor: pointer; transition: border-color 0.15s, color 0.15s; white-space: nowrap; }
+  .btn:hover { border-color: var(--amber); color: var(--amber); }
+  .btn:disabled { opacity: 0.4; cursor: default; }
 `
 
 // ─── ISO week helpers ─────────────────────────────────────────────────────────
@@ -118,123 +111,11 @@ const now = new Date()
 const ISO_WEEK = getISOWeek(now)
 const WEEK_MONDAY = getWeekMonday(now)
 
-// ─── Comics data ─────────────────────────────────────────────────────────────
-const COMICS = [
-  {
-    title: 'Title Creep',
-    panels: [
-      { cap: 'Monday', fig: [{ p: 'left', line: 'You own the IAM system.', pose: 'neutral', mood: 'happy' }] },
-      { cap: 'Tuesday', fig: [{ p: 'right', line: 'Also security now.', pose: 'point-right', mood: 'worried' }, { p: 'left', line: '…okay?', pose: 'shrug', mood: 'neutral' }] },
-      { cap: 'Wednesday', fig: [{ p: 'right', line: 'And the printers.', pose: 'point-right', mood: 'neutral' }, { p: 'left', line: 'The printers?!', pose: 'panic', mood: 'worried' }] },
-      { cap: 'Friday', fig: [{ p: 'left', line: 'I just handle Identity & Access.', pose: 'neutral', mood: 'neutral' }, { p: 'right', line: 'Great. The copier needs MFA.', pose: 'neutral', mood: 'happy' }] },
-    ],
-  },
-  {
-    title: 'The Bus Factor',
-    panels: [
-      { cap: null, fig: [{ p: 'right', line: 'What if a bus hits you?', pose: 'neutral', mood: 'worried' }, { p: 'left', line: '…pardon?', pose: 'shrug', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'right', line: 'Nobody can reset passwords!', pose: 'panic', mood: 'worried' }] },
-      { cap: null, fig: [{ p: 'left', line: 'So… don\'t get hit by a bus?', pose: 'neutral', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'right', line: 'That\'s your continuity plan?', pose: 'point-right', mood: 'worried' }, { p: 'left', line: 'Bus factor: 1.', pose: 'shrug', mood: 'neutral' }] },
-    ],
-  },
-  {
-    title: 'Just In Case',
-    panels: [
-      { cap: null, fig: [{ p: 'right', line: 'I need access to everything.', pose: 'neutral', mood: 'happy' }, { p: 'left', line: 'Everything?', pose: 'neutral', mood: 'worried' }] },
-      { cap: null, fig: [{ p: 'right', line: 'Just in case! You never know.', pose: 'shrug', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'left', line: 'What\'s the actual use case?', pose: 'point-right', mood: 'neutral' }, { p: 'right', line: '…vibes mostly.', pose: 'shrug', mood: 'happy' }] },
-      { cap: null, fig: [{ p: 'left', line: 'Here\'s read-only on staging.', pose: 'neutral', mood: 'neutral' }, { p: 'right', line: 'That\'s not everything!', pose: 'panic', mood: 'worried' }, { p: 'left', line: 'Correct.', pose: 'neutral', mood: 'neutral' }] },
-    ],
-  },
-  {
-    title: 'The Ghost Account',
-    panels: [
-      { cap: null, fig: [{ p: 'right', line: 'What\'s svc-legacy-admin?', pose: 'point-right', mood: 'neutral' }, { p: 'left', line: 'Do. Not. Touch. It.', pose: 'neutral', mood: 'worried' }] },
-      { cap: null, fig: [{ p: 'right', line: 'It has admin on everything!', pose: 'panic', mood: 'worried' }] },
-      { cap: null, fig: [{ p: 'left', line: 'I know. We\'re afraid of it.', pose: 'shrug', mood: 'neutral' }, { p: 'right', line: 'Who owns it?', pose: 'neutral', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'left', line: 'Dave. Dave left in 2019.', pose: 'neutral', mood: 'worried' }, { p: 'right', line: 'Rotate it!', pose: 'point-right', mood: 'worried' }, { p: 'left', line: 'Last time we tried, billing broke.', pose: 'shrug', mood: 'neutral' }] },
-    ],
-  },
-  {
-    title: 'Friday, 4:59 PM',
-    panels: [
-      { cap: '4:59 PM Friday', fig: [{ p: 'left', line: 'Have a great weekend!', pose: 'neutral', mood: 'happy' }] },
-      { cap: '5:00 PM', fig: [{ p: 'right', line: 'Help. I\'m locked out.', pose: 'panic', mood: 'worried' }] },
-      { cap: null, fig: [{ p: 'left', line: '…how?', pose: 'shrug', mood: 'neutral' }, { p: 'right', line: 'MFA phone is dead. And lost.', pose: 'shrug', mood: 'worried' }] },
-      { cap: 'Monday, 9 AM', fig: [{ p: 'left', line: 'Back in?', pose: 'neutral', mood: 'neutral' }, { p: 'right', line: 'I worked from my tablet.', pose: 'shrug', mood: 'neutral' }, { p: 'left', line: 'Please set up backup MFA.', pose: 'point-right', mood: 'worried' }] },
-    ],
-  },
-  {
-    title: 'Quarterly Review',
-    panels: [
-      { cap: 'Access Review', fig: [{ p: 'left', line: '200 accounts to review.', pose: 'neutral', mood: 'neutral' }, { p: 'right', line: 'I\'ll knock it out quick.', pose: 'neutral', mood: 'happy' }] },
-      { cap: '3 minutes later', fig: [{ p: 'right', line: 'Approved! All done.', pose: 'neutral', mood: 'happy' }] },
-      { cap: null, fig: [{ p: 'left', line: 'You approved the contractor from 2021?', pose: 'point-right', mood: 'worried' }, { p: 'right', line: 'All looked fine to me!', pose: 'shrug', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'left', line: 'They haven\'t worked here in 3 years.', pose: 'neutral', mood: 'worried' }, { p: 'right', line: 'So… re-review?', pose: 'shrug', mood: 'neutral' }] },
-    ],
-  },
-  {
-    title: 'But It\'s Annoying',
-    panels: [
-      { cap: null, fig: [{ p: 'right', line: 'Can you turn off MFA for me?', pose: 'neutral', mood: 'happy' }, { p: 'left', line: 'No.', pose: 'neutral', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'right', line: 'It\'s SO annoying to use!', pose: 'panic', mood: 'worried' }] },
-      { cap: null, fig: [{ p: 'left', line: 'You know what\'s more annoying?', pose: 'point-right', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'left', line: 'A breach.', pose: 'neutral', mood: 'neutral' }, { p: 'right', line: '…fine.', pose: 'shrug', mood: 'neutral' }] },
-    ],
-  },
-  {
-    title: 'Who Owns This?',
-    panels: [
-      { cap: 'All-hands', fig: [{ p: 'center', line: 'Who owns the IAM system?', pose: 'neutral', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'left', line: '*points right*', pose: 'point-right', mood: 'neutral' }, { p: 'right', line: '*points left*', pose: 'point-left', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'center', line: 'Everyone is pointing at you.', pose: 'neutral', mood: 'worried' }] },
-      { cap: null, fig: [{ p: 'left', line: 'Bus factor: 1.', pose: 'shrug', mood: 'neutral' }, { p: 'right', line: 'Classic.', pose: 'neutral', mood: 'neutral' }] },
-    ],
-  },
-  {
-    title: 'Paid Time Off',
-    panels: [
-      { cap: null, fig: [{ p: 'left', line: 'Taking PTO next week!', pose: 'neutral', mood: 'happy' }, { p: 'right', line: 'Great! Bring your laptop.', pose: 'neutral', mood: 'happy' }] },
-      { cap: null, fig: [{ p: 'left', line: '…why?', pose: 'neutral', mood: 'worried' }, { p: 'right', line: 'Just in case.', pose: 'shrug', mood: 'neutral' }] },
-      { cap: 'Day 1 of PTO', fig: [{ p: 'right', line: 'Quick question about provisioning…', pose: 'point-right', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'left', line: 'This is not really PTO.', pose: 'shrug', mood: 'worried' }, { p: 'right', line: 'Think of it as… remote work!', pose: 'neutral', mood: 'happy' }] },
-    ],
-  },
-  {
-    title: 'We Do Not Speak Of It',
-    panels: [
-      { cap: null, fig: [{ p: 'right', line: 'This key was last rotated… 2018?', pose: 'point-right', mood: 'worried' }] },
-      { cap: null, fig: [{ p: 'left', line: 'We don\'t talk about that key.', pose: 'neutral', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'right', line: 'Shouldn\'t we rotate it?', pose: 'neutral', mood: 'neutral' }, { p: 'left', line: 'Last engineer who tried is gone.', pose: 'shrug', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'right', line: 'They quit?', pose: 'neutral', mood: 'worried' }, { p: 'left', line: 'Promoted. To a quieter team.', pose: 'neutral', mood: 'neutral' }] },
-    ],
-  },
-  {
-    title: 'Onboarding',
-    panels: [
-      { cap: 'Week 1', fig: [{ p: 'right', line: 'New hire needs access!', pose: 'neutral', mood: 'happy' }, { p: 'left', line: 'Three approvals required.', pose: 'neutral', mood: 'neutral' }] },
-      { cap: 'Week 2', fig: [{ p: 'left', line: 'Still waiting on approval 2.', pose: 'shrug', mood: 'neutral' }] },
-      { cap: 'Week 3', fig: [{ p: 'left', line: 'All approved! Access granted.', pose: 'neutral', mood: 'happy' }] },
-      { cap: 'Week 4', fig: [{ p: 'right', line: 'They quit yesterday.', pose: 'shrug', mood: 'worried' }, { p: 'left', line: 'Deprovision immediately then.', pose: 'neutral', mood: 'neutral' }] },
-    ],
-  },
-  {
-    title: 'It\'s Documented',
-    panels: [
-      { cap: null, fig: [{ p: 'right', line: 'Where\'s the runbook for this?', pose: 'neutral', mood: 'neutral' }, { p: 'left', line: 'It\'s documented.', pose: 'neutral', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'right', line: 'Where?', pose: 'neutral', mood: 'neutral' }, { p: 'left', line: 'My head.', pose: 'point-left', mood: 'neutral' }] },
-      { cap: null, fig: [{ p: 'right', line: '…write it down?', pose: 'neutral', mood: 'worried' }, { p: 'left', line: 'I know where it is.', pose: 'shrug', mood: 'neutral' }] },
-      { cap: 'Bus factor: still 1', fig: [{ p: 'right', line: 'Bus factor intensifies.', pose: 'panic', mood: 'worried' }, { p: 'left', line: 'I\'m fine!', pose: 'neutral', mood: 'happy' }] },
-    ],
-  },
-]
-
 // ─── SVG Comic Panel Renderer ─────────────────────────────────────────────────
 const W = 260, H = 180
 
 function wrapText(text, maxChars) {
-  const words = text.split(' ')
+  const words = String(text).split(' ')
   const lines = []
   let cur = ''
   for (const w of words) {
@@ -256,7 +137,7 @@ function StickFigure({ x, pose, mood }) {
   const armY = hy + 28
   let lax = hx - 18, lax2 = hx - 8, rax = hx + 18, rax2 = hx + 8
   let llx = hx - 10, lly = hy + 65, rlx = hx + 10, rly = hy + 65
-  if (pose === 'panic') { lax = hx - 22; lax2 = hx - 12; rax = hx + 22; rax2 = hx + 12; lly = hy + 60; rly = hy + 60 }
+  if (pose === 'panic') { lax = hx - 22; lax2 = hx - 12; rax = hx + 22; rax2 = hx + 12 }
   if (pose === 'shrug') { lax2 = hx - 20; rax2 = hx + 20 }
   if (pose === 'point-right') { rax2 = hx + 28; lax2 = hx - 8 }
   if (pose === 'point-left') { lax2 = hx - 28; rax2 = hx + 8 }
@@ -277,10 +158,10 @@ function StickFigure({ x, pose, mood }) {
   )
 }
 
-function SpeechBubble({ text, tailX, tailDir, bx, by, maxW = 100 }) {
+function SpeechBubble({ text, tailX, bx, by, maxW = 110 }) {
   const lines = wrapText(text, 18)
   const bh = lines.length * 16 + 10
-  const bw = Math.min(maxW, Math.max(60, ...lines.map(l => l.length * 6 + 10)))
+  const bw = Math.min(maxW, Math.max(60, ...lines.map(l => l.length * 6 + 14)))
   const tailY = by + bh
   const tailXAdj = Math.max(bx + 6, Math.min(bx + bw - 6, tailX))
   return (
@@ -294,34 +175,24 @@ function SpeechBubble({ text, tailX, tailDir, bx, by, maxW = 100 }) {
   )
 }
 
-function ComicPanel({ panel, panelRef }) {
+function ComicPanel({ panel, svgRef }) {
   const { cap, fig } = panel
   const capH = cap ? 20 : 0
-  const figureXmap = { left: 60, center: 130, right: 200 }
-
-  const bubbles = fig.map((f, i) => {
-    const fx = figureXmap[f.p] || 130
-    const bw = 110
-    let bx = f.p === 'right' ? Math.max(4, fx - bw - 4) : Math.min(W - bw - 4, fx + 4)
-    if (f.p === 'center') bx = (W - bw) / 2
-    const by = 4
-    return { ...f, fx, bx, by, bw }
-  })
-
-  const figTop = Math.max(...bubbles.map(b => {
-    const lines = wrapText(b.line, 18)
-    return b.by + lines.length * 16 + 10 + 16
-  }))
+  const figureXmap = { left: 55, center: 130, right: 205 }
 
   return (
-    <svg ref={panelRef} viewBox={`0 0 ${W} ${H}`} xmlns="http://www.w3.org/2000/svg" style={{ background: '#fbf7ec' }}>
+    <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} xmlns="http://www.w3.org/2000/svg" style={{ background: '#fbf7ec' }}>
       <rect x={0} y={0} width={W} height={H} fill="#fbf7ec" />
-      {bubbles.map((b, i) => (
-        <SpeechBubble key={i} text={b.line} tailX={b.fx} bx={b.bx} by={b.by} maxW={b.bw} />
-      ))}
       {fig.map((f, i) => {
-        const fx = figureXmap[f.p] || 130
-        return <StickFigure key={i} x={fx} pose={f.pose} mood={f.mood} />
+        const fx = figureXmap[f.p] ?? 130
+        const bw = 108
+        let bx = f.p === 'right' ? Math.max(4, fx - bw - 2) : Math.min(W - bw - 4, fx + 4)
+        if (f.p === 'center') bx = (W - bw) / 2
+        return <SpeechBubble key={i} text={f.line} tailX={fx} bx={bx} by={4} maxW={bw} />
+      })}
+      {fig.map((f, i) => {
+        const fx = figureXmap[f.p] ?? 130
+        return <StickFigure key={i} x={fx} pose={f.pose || 'neutral'} mood={f.mood || 'neutral'} />
       })}
       {cap && (
         <>
@@ -333,7 +204,7 @@ function ComicPanel({ panel, panelRef }) {
   )
 }
 
-// ─── News Card ─────────────────────────────────────────────────────────────────
+// ─── News Card ────────────────────────────────────────────────────────────────
 function NewsCard({ item }) {
   const chipClass = item.severity === 'high' ? 'chip chip-high' : item.severity === 'medium' ? 'chip chip-medium' : 'chip chip-low'
   return (
@@ -353,7 +224,6 @@ function NewsCard({ item }) {
   )
 }
 
-// ─── Skeleton ──────────────────────────────────────────────────────────────────
 function SkeletonCard() {
   return (
     <div className="card">
@@ -365,106 +235,78 @@ function SkeletonCard() {
   )
 }
 
-// ─── Storage helpers ──────────────────────────────────────────────────────────
-const LS_KEY = 'ops-console:v1'
-function loadState() {
-  try { return JSON.parse(localStorage.getItem(LS_KEY) || 'null') } catch { return null }
-}
-function saveState(s) {
-  try { localStorage.setItem(LS_KEY, JSON.stringify(s)) } catch {}
-}
-
-const DEFAULT_FOCUS = 'Identity & Access Management (IAM) security: CVEs, vendor advisories (Okta, Microsoft Entra/Azure AD, Ping), credential/identity breaches, CISA guidance'
-
-// ─── Comic week key ───────────────────────────────────────────────────────────
+// ─── Comic week override storage ──────────────────────────────────────────────
 const COMIC_WEEK_KEY = `ops-comic-week:${ISO_WEEK}`
+
+function loadComicOverride() {
+  try { return JSON.parse(localStorage.getItem(COMIC_WEEK_KEY) ?? 'null') } catch { return null }
+}
+function saveComicOverride(idx) {
+  try { localStorage.setItem(COMIC_WEEK_KEY, JSON.stringify(idx)) } catch {}
+}
 
 // ─── Main App ─────────────────────────────────────────────────────────────────
 export default function App() {
-  const saved = loadState()
+  const [feed, setFeed] = useState(null)
+  const [feedError, setFeedError] = useState(null)
+  const [comics, setComics] = useState(null)
+  const [comicsError, setComicsError] = useState(null)
 
-  const [focus, setFocus] = useState(saved?.focus ?? DEFAULT_FOCUS)
-  const [items, setItems] = useState(saved?.items ?? null)
-  const [lastPulled, setLastPulled] = useState(saved?.lastPulled ?? null)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+  // Derived once comics load
+  const defaultComicIdx = comics ? ISO_WEEK % comics.length : 0
+  const [comicOverride, setComicOverride] = useState(loadComicOverride)
+  const comicIdx = comicOverride ?? defaultComicIdx
 
-  const defaultComicIdx = ISO_WEEK % COMICS.length
-  const [comicIdx, setComicIdx] = useState(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem(COMIC_WEEK_KEY) || 'null')
-      return stored ?? defaultComicIdx
-    } catch { return defaultComicIdx }
-  })
+  const svgRefs = [useRef(), useRef(), useRef(), useRef()]
 
-  const panelRefs = [useRef(), useRef(), useRef(), useRef()]
-
-  const fetchFeed = useCallback(async (focusStr) => {
-    setLoading(true)
-    setError(null)
-    try {
-      const res = await fetch('/api/news', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ focus: focusStr }),
-      })
-      const data = await res.json()
-      if (data.error) throw new Error(data.error)
-      const ts = new Date().toLocaleString()
-      setItems(data.items)
-      setLastPulled(ts)
-      saveState({ focus: focusStr, items: data.items, lastPulled: ts })
-    } catch (e) {
-      setError(e.message || 'Unknown error')
-    } finally {
-      setLoading(false)
-    }
+  // Load static JSON files on mount
+  useEffect(() => {
+    fetch('/feed.json')
+      .then(r => r.json())
+      .then(d => setFeed(d))
+      .catch(e => setFeedError(e.message))
   }, [])
 
-  // Auto-fetch once on first load if no cache
   useEffect(() => {
-    if (!items) fetchFeed(focus)
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+    fetch('/comics.json')
+      .then(r => r.json())
+      .then(d => setComics(d))
+      .catch(e => setComicsError(e.message))
+  }, [])
 
-  const handleRefresh = () => {
-    saveState({ focus, items, lastPulled })
-    fetchFeed(focus)
-  }
-
-  const handleKeyDown = (e) => { if (e.key === 'Enter') handleRefresh() }
-
-  const shuffleComic = () => {
+  const shuffleComic = useCallback(() => {
+    if (!comics) return
     let next = comicIdx
-    while (next === comicIdx) next = Math.floor(Math.random() * COMICS.length)
-    setComicIdx(next)
-    try { localStorage.setItem(COMIC_WEEK_KEY, JSON.stringify(next)) } catch {}
-  }
+    while (comics.length > 1 && next === comicIdx) next = Math.floor(Math.random() * comics.length)
+    setComicOverride(next)
+    saveComicOverride(next)
+  }, [comics, comicIdx])
 
-  const revertComic = () => {
-    setComicIdx(defaultComicIdx)
-    try { localStorage.setItem(COMIC_WEEK_KEY, JSON.stringify(defaultComicIdx)) } catch {}
-  }
+  const revertComic = useCallback(() => {
+    setComicOverride(null)
+    try { localStorage.removeItem(COMIC_WEEK_KEY) } catch {}
+  }, [])
 
-  const saveComicJpg = async () => {
-    const strip = COMICS[comicIdx]
+  const saveComicJpg = useCallback(async () => {
+    if (!comics) return
+    const strip = comics[comicIdx]
     const scale = 2
     const PW = W * scale, PH = H * scale
-    const cols = 2, rows = 2
     const titleH = 40 * scale
     const canvas = document.createElement('canvas')
-    canvas.width = PW * cols + 3 * scale
-    canvas.height = titleH + PH * rows + 3 * scale
+    canvas.width = PW * 2 + 3 * scale
+    canvas.height = titleH + PH * 2 + 3 * scale
     const ctx = canvas.getContext('2d')
     ctx.fillStyle = '#1c1a16'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle = '#f4eede'
-    ctx.font = `bold ${16 * scale}px 'Bricolage Grotesque', sans-serif`
+    ctx.font = `bold ${15 * scale}px 'Bricolage Grotesque', sans-serif`
     ctx.textAlign = 'center'
     ctx.fillText(`${strip.title.toUpperCase()}  ·  STRIP #${comicIdx + 1}  ·  WEEK ${ISO_WEEK}`, canvas.width / 2, 26 * scale)
 
     for (let i = 0; i < 4; i++) {
       const col = i % 2, row = Math.floor(i / 2)
-      const svgEl = panelRefs[i].current?.closest('svg') || panelRefs[i].current
+      const svgEl = svgRefs[i].current
       if (!svgEl) continue
       const clone = svgEl.cloneNode(true)
       clone.setAttribute('width', PW)
@@ -472,12 +314,10 @@ export default function App() {
       const svgStr = new XMLSerializer().serializeToString(clone)
       const blob = new Blob([svgStr], { type: 'image/svg+xml' })
       const url = URL.createObjectURL(blob)
-      await new Promise((resolve) => {
+      await new Promise(resolve => {
         const img = new Image()
         img.onload = () => {
-          const ox = col * (PW + 3 * scale)
-          const oy = titleH + row * (PH + 3 * scale)
-          ctx.drawImage(img, ox, oy, PW, PH)
+          ctx.drawImage(img, col * (PW + 3 * scale), titleH + row * (PH + 3 * scale), PW, PH)
           URL.revokeObjectURL(url)
           resolve()
         }
@@ -491,14 +331,14 @@ export default function App() {
     a.href = canvas.toDataURL('image/jpeg', 0.92)
     a.download = `comic-week-${ISO_WEEK}-${slug}.jpg`
     a.click()
-  }
+  }, [comics, comicIdx])
 
-  const actionable = (items || []).filter(i => i.actionable).sort((a, b) => {
-    const ord = { high: 0, medium: 1, low: 2 }
-    return (ord[a.severity] ?? 3) - (ord[b.severity] ?? 3)
-  })
-  const rest = (items || []).filter(i => !i.actionable)
-  const strip = COMICS[comicIdx]
+  // Feed split
+  const SEV_ORDER = { high: 0, medium: 1, low: 2 }
+  const allItems = feed?.items ?? []
+  const actionable = allItems.filter(i => i.actionable).sort((a, b) => (SEV_ORDER[a.severity] ?? 3) - (SEV_ORDER[b.severity] ?? 3))
+  const rest = allItems.filter(i => !i.actionable)
+  const strip = comics?.[comicIdx]
 
   return (
     <>
@@ -513,70 +353,65 @@ export default function App() {
           <span className="spof-badge"><span className="spof-dot" />SPOF: 1 (you)</span>
         </div>
 
-        {/* Controls */}
-        <div className="controls">
-          <div className="focus-wrap">
-            <span className="focus-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </span>
-            <input
-              className="focus-input"
-              value={focus}
-              onChange={e => setFocus(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Focus area…"
-            />
+        {/* Feed meta */}
+        {feed?.generatedAt && (
+          <div className="feed-meta">
+            Updated {new Date(feed.generatedAt).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })} · weekly auto-refresh
           </div>
-          <button className="btn btn-primary" onClick={handleRefresh} disabled={loading}>
-            {loading ? 'Fetching…' : 'Refresh feed'}
-          </button>
-        </div>
-        {lastPulled && <div className="last-pulled">Last pulled {lastPulled} · live web search</div>}
+        )}
 
         {/* Feed */}
-        {loading && (
+        {!feed && !feedError && (
           <>
-            <div className="section-label action">Action required</div>
+            <div className="section-label action" style={{ marginTop: 28 }}>Action required</div>
             <SkeletonCard /><SkeletonCard />
             <div className="section-label">Latest in your area</div>
             <SkeletonCard /><SkeletonCard /><SkeletonCard />
           </>
         )}
-        {!loading && error && (
-          <div className="error-card">
-            <strong>Error fetching feed:</strong> {error}
-            <br /><br />
-            <button className="btn" onClick={handleRefresh}>Try again</button>
+        {feedError && (
+          <div className="error-card" style={{ marginTop: 24 }}>
+            <strong>Could not load feed:</strong> {feedError}
           </div>
         )}
-        {!loading && !error && items && (
+        {feed && (
           <>
             <div className="section-label action">Action required</div>
-            {actionable.length === 0 ? <div className="empty-card">No urgent action items this week.</div> : actionable.map((item, i) => <NewsCard key={i} item={item} />)}
+            {actionable.length === 0
+              ? <div className="empty-card">No urgent action items this week — check back after Monday's update.</div>
+              : actionable.map((item, i) => <NewsCard key={i} item={item} />)}
             <div className="section-label">Latest in your area</div>
-            {rest.length === 0 ? <div className="empty-card">No other items this week.</div> : rest.map((item, i) => <NewsCard key={i} item={item} />)}
+            {rest.length === 0
+              ? <div className="empty-card">No other items this week.</div>
+              : rest.map((item, i) => <NewsCard key={i} item={item} />)}
           </>
         )}
 
         {/* Comic */}
         <div className="comic-section">
           <div className="section-label">Comic of the week</div>
-          <div className="comic-header">
-            <span className="comic-title-text">{strip.title}</span>
-            <span className="comic-strip-label">Strip #{comicIdx + 1} · Week {ISO_WEEK}</span>
-          </div>
-          <div className="comic-actions">
-            <button className="btn" onClick={shuffleComic}>⇄ Shuffle</button>
-            {comicIdx !== defaultComicIdx && <button className="btn" onClick={revertComic}>↺ Week's pick</button>}
-            <button className="btn" onClick={saveComicJpg}>↓ Save as JPG</button>
-          </div>
-          <div className="comic-grid">
-            {strip.panels.map((panel, i) => (
-              <div key={i} className="comic-panel">
-                <ComicPanel panel={panel} panelRef={panelRefs[i]} />
+          {comicsError && <div className="error-card">Could not load comics: {comicsError}</div>}
+          {!comics && !comicsError && <SkeletonCard />}
+          {strip && (
+            <>
+              <div className="comic-header">
+                <span className="comic-title-text">{strip.title}</span>
+                <span className="comic-strip-label">Strip #{comicIdx + 1} of {comics.length} · Week {ISO_WEEK}</span>
               </div>
-            ))}
-          </div>
+              <div className="comic-actions">
+                <button className="btn" onClick={shuffleComic}>⇄ Shuffle</button>
+                {comicOverride !== null && <button className="btn" onClick={revertComic}>↺ Week's pick</button>}
+                <button className="btn" onClick={saveComicJpg}>↓ Save as JPG</button>
+              </div>
+              <div className="comic-grid">
+                {strip.panels.map((panel, i) => (
+                  <div key={i} className="comic-panel">
+                    <ComicPanel panel={panel} svgRef={svgRefs[i]} />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
       </div>
