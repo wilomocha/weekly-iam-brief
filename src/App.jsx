@@ -49,9 +49,9 @@ export default function App() {
   const [filter, setFilter] = useState('all')
 
   useEffect(() => {
-    fetch('/api/news')
+    fetch('/articles.json')
       .then((r) => {
-        if (!r.ok) throw new Error(`API error ${r.status}`)
+        if (!r.ok) throw new Error(`Could not load articles.json (${r.status})`)
         return r.json()
       })
       .then((data) => {
@@ -120,7 +120,9 @@ export default function App() {
             <strong>Could not load articles</strong>
             <p style={{ marginTop: 8, fontSize: 14 }}>{error}</p>
             <p style={{ marginTop: 8, fontSize: 13, color: '#a0aec0' }}>
-              Make sure <code>NEWS_API_KEY</code> is set in your environment.
+              Run the GitHub Actions workflow manually to populate articles, or
+              run <code>node scripts/fetch-news.mjs</code> locally with{' '}
+              <code>NEWS_API_KEY</code> set.
             </p>
           </div>
         )}

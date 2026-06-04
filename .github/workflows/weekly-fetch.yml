@@ -1,0 +1,33 @@
+name: Weekly IAM Brief
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'  # Every Monday at 8am UTC
+  workflow_dispatch:       # Also allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch IAM news
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+        run: node scripts/fetch-news.mjs
+
+      - name: Commit updated articles
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/articles.json
+          git diff --staged --quiet && echo "No changes" || \
+            git commit -m "chore: weekly IAM brief $(date -u +%Y-%m-%d)" && \
+            git push
