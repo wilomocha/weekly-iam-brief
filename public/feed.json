@@ -1,60 +1,38 @@
 {
   "items": [
     {
-      "title": "CVE-2026-31847: FortiAuthenticator RCE",
-      "summary": "Unauthenticated RCE via crafted RADIUS packet.",
+      "title": "Jenkins Microsoft Entra ID Plugin Open Redirect Vulnerability (CVE-2026-42525)",
+      "summary": "Allows phishing via open redirect in Jenkins Entra ID plugin.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Patch immediately",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-05-15"
+      "action": "Update to version 667.0.0 or later.",
+      "source": "GitLab Advisory Database",
+      "url": "https://advisories.gitlab.com/maven/org.jenkins-ci.plugins/azure-ad/CVE-2026-42525/",
+      "date": "2026-04-29"
     },
     {
-      "title": "CVE-2026-28391: Okta OIDC Token Bypass",
-      "summary": "Token validation flaw allows auth bypass.",
-      "category": "vulnerability",
-      "severity": "high",
+      "title": "Scattered Spider Targets IT Help Desks to Bypass MFA",
+      "summary": "Attackers use social engineering to bypass MFA via IT help desks.",
+      "category": "breach",
+      "severity": "medium",
       "actionable": true,
-      "action": "Update Okta configurations",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-05-15"
+      "action": "Enhance help desk security protocols.",
+      "source": "Tech Jacks Solutions",
+      "url": "https://techjacksolutions.com/scc-vendor-rollup/identity-platforms-okta-microsoft-entra-id-ping-identity-and-it-service-desk-functions-vulnerability-rollup-2026-04-20/",
+      "date": "2026-04-20"
     },
     {
-      "title": "CVE-2026-29104: PingFederate XXE",
-      "summary": "XXE in SAML parser allows SSRF.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply PingFederate patch",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-05-15"
-    },
-    {
-      "title": "CVE-2026-30582: Azure AD B2C Policy Injection",
-      "summary": "Custom policy XML injection allows privilege escalation.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Review and update policies",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-05-15"
-    },
-    {
-      "title": "CISA Warns of SAML Flaws Exploitation",
-      "summary": "Active exploitation of SAML implementation flaws in enterprise SSO products.",
+      "title": "CISA Advisory on Threat Actor Leveraging Compromised Accounts",
+      "summary": "Guidance on mitigating threats from compromised former employee accounts.",
       "category": "guidance",
-      "severity": "high",
+      "severity": "medium",
       "actionable": true,
-      "action": "Review SAML configurations",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-05-15"
+      "action": "Review and implement CISA's recommendations.",
+      "source": "CISA",
+      "url": "https://www.cisa.gov/sites/default/files/2024-02/aa24-046a-threat-actor-leverages-compromised%20account-of%20former-employee.pdf",
+      "date": "2026-04-15"
     }
   ],
-  "generatedAt": "2026-06-08T18:43:23.373Z"
+  "generatedAt": "2026-06-08T19:56:57.253Z"
 }

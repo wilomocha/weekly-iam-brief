@@ -972,5 +972,73 @@
         ]
       }
     ]
+  },
+  {
+    "title": "The Never-ending Access Quest",
+    "premise": "Access request loops in a never-ending approval chain.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Why isn't my access request approved?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "It's in the approval loop again.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Didn't you approve it last week?",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Yes, but it bounced back.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "What now?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "It needs more approvals.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "Next milestone: CERN review role.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
