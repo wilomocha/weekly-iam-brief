@@ -1,856 +1,269 @@
 [
   {
-    "title": "Title Creep",
-    "premise": "\"you own the system\" snowballs into IAM, then security, then the printers",
+    "title": "Break Glass Theater",
+    "premise": "The emergency break-glass account is locked behind the same approval workflow it exists to bypass.",
     "panels": [
-      {
-        "cap": "Monday",
-        "fig": [
-          {
-            "p": "left",
-            "line": "You own the IAM system.",
-            "pose": "neutral",
-            "mood": "happy"
-          }
-        ]
-      },
-      {
-        "cap": "Tuesday",
-        "fig": [
-          {
-            "p": "right",
-            "line": "Also security now.",
-            "pose": "point-right",
-            "mood": "worried"
-          },
-          {
-            "p": "left",
-            "line": "…okay?",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": "Wednesday",
-        "fig": [
-          {
-            "p": "right",
-            "line": "And the printers.",
-            "pose": "point-right",
-            "mood": "neutral"
-          },
-          {
-            "p": "left",
-            "line": "The printers?!",
-            "pose": "panic",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": "Friday",
-        "fig": [
-          {
-            "p": "left",
-            "line": "I just handle Identity & Access.",
-            "pose": "neutral",
-            "mood": "neutral"
-          },
-          {
-            "p": "right",
-            "line": "Great. The copier needs MFA.",
-            "pose": "neutral",
-            "mood": "happy"
-          }
-        ]
-      }
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "Break-glass is for real emergencies only.", "emotion": "flat" },
+        { "speaker": "A", "side": "left",  "text": "Understood.", "emotion": "flat" }
+      ]},
+      { "cap": "3am. Production down.", "beats": [
+        { "speaker": "A", "side": "left", "text": "This is a real emergency. Break-glass time.", "emotion": "worried" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "To access break-glass, submit form CF-44B and wait for approver.", "emotion": "flat" },
+        { "speaker": "A", "side": "left",  "text": "But— that's what break-glass bypasses—", "emotion": "shocked" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "Approval SLA: 48 hours.", "emotion": "flat" },
+        { "speaker": "A", "side": "left",  "text": "The irony is loud.", "emotion": "angry" }
+      ]}
     ]
   },
   {
-    "title": "The Bus Factor",
-    "premise": "\"what if a bus hits you?\" → nobody can reset passwords → \"so don't.\"",
+    "title": "Permission Inheritance",
+    "premise": "A dev accumulates access every time they change teams and nobody ever cleans it up.",
     "panels": [
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "What if a bus hits you?",
-            "pose": "neutral",
-            "mood": "worried"
-          },
-          {
-            "p": "left",
-            "line": "…pardon?",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "Nobody can reset passwords!",
-            "pose": "panic",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "So… don't get hit by a bus?",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "That's your continuity plan?",
-            "pose": "point-right",
-            "mood": "worried"
-          },
-          {
-            "p": "left",
-            "line": "Bus factor: 1.",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      }
+      { "cap": "Joined team A", "beats": [
+        { "speaker": "none", "side": null, "text": "Got read access to staging.", "emotion": "flat" }
+      ]},
+      { "cap": "Moved to team B", "beats": [
+        { "speaker": "none", "side": null, "text": "Got prod write. Kept team A access.", "emotion": "flat" }
+      ]},
+      { "cap": "Moved to team C", "beats": [
+        { "speaker": "none", "side": null, "text": "Got billing admin. Kept everything else.", "emotion": "flat" }
+      ]},
+      { "cap": "Annual audit", "beats": [
+        { "speaker": "B", "side": "right", "text": "You have more access than the CEO.", "emotion": "worried" },
+        { "speaker": "A", "side": "left",  "text": "I've never cleaned anything up.", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "We know.", "emotion": "flat" }
+      ]}
     ]
   },
   {
-    "title": "Just In Case",
-    "premise": "user wants access to \"everything, just in case\"; you hold least-privilege",
+    "title": "The Shared Account",
+    "premise": "One database account, 47 users, simultaneous logins from three continents.",
     "panels": [
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "I need access to everything.",
-            "pose": "neutral",
-            "mood": "happy"
-          },
-          {
-            "p": "left",
-            "line": "Everything?",
-            "pose": "neutral",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "Just in case! You never know.",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "What's the actual use case?",
-            "pose": "point-right",
-            "mood": "neutral"
-          },
-          {
-            "p": "right",
-            "line": "…vibes mostly.",
-            "pose": "shrug",
-            "mood": "happy"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "Here's read-only on staging.",
-            "pose": "neutral",
-            "mood": "neutral"
-          },
-          {
-            "p": "right",
-            "line": "That's not everything!",
-            "pose": "panic",
-            "mood": "worried"
-          },
-          {
-            "p": "left",
-            "line": "Correct.",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      }
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "Who changed the prod DB password?", "emotion": "worried" },
+        { "speaker": "B", "side": "right", "text": "Not me.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "The account has 47 users.", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "And 3 simultaneous logins. Different continents.", "emotion": "worried" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "Can we trace who did it?", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "The audit trail just says db_shared_user.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "Has it always been like this?", "emotion": "worried" },
+        { "speaker": "B", "side": "right", "text": "Since 2015.", "emotion": "flat" },
+        { "speaker": "A", "side": "left",  "text": "Cool.", "emotion": "flat" }
+      ]}
     ]
   },
   {
-    "title": "The Ghost Account",
-    "premise": "a mystery service account from years ago that has admin; nobody touches it",
+    "title": "Credential Archaeology",
+    "premise": "A file named TEMP_PASSWORDS_DELETE_THIS.xlsx from 2016 is found on 12 backup drives.",
     "panels": [
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "What's svc-legacy-admin?",
-            "pose": "point-right",
-            "mood": "neutral"
-          },
-          {
-            "p": "left",
-            "line": "Do. Not. Touch. It.",
-            "pose": "neutral",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "It has admin on everything!",
-            "pose": "panic",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "I know. We're afraid of it.",
-            "pose": "shrug",
-            "mood": "neutral"
-          },
-          {
-            "p": "right",
-            "line": "Who owns it?",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "Dave. Dave left in 2019.",
-            "pose": "neutral",
-            "mood": "worried"
-          },
-          {
-            "p": "right",
-            "line": "Rotate it!",
-            "pose": "point-right",
-            "mood": "worried"
-          },
-          {
-            "p": "left",
-            "line": "Last time we tried, billing broke.",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      }
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "Found: TEMP_PASSWORDS_DELETE_THIS.xlsx", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "From when?", "emotion": "flat" },
+        { "speaker": "A", "side": "left",  "text": "2016.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "Every password we've ever used. 847 rows.", "emotion": "shocked" },
+        { "speaker": "A", "side": "left",  "text": "On 12 backup drives.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "Are any of these still active?", "emotion": "worried" }
+      ]},
+      { "cap": "…pause…", "beats": [
+        { "speaker": "A", "side": "left",  "text": "Yes.", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "How many?", "emotion": "shocked" },
+        { "speaker": "A", "side": "left",  "text": "All of them.", "emotion": "flat" }
+      ]}
     ]
   },
   {
-    "title": "Friday, 4:59 PM",
-    "premise": "someone gets locked out exactly as the weekend starts",
+    "title": "MFA Debt Spiral",
+    "premise": "Employee loses their phone. IT policy requires 14 business days to reset MFA. Everything requires MFA.",
     "panels": [
-      {
-        "cap": "4:59 PM Friday",
-        "fig": [
-          {
-            "p": "left",
-            "line": "Have a great weekend!",
-            "pose": "neutral",
-            "mood": "happy"
-          }
-        ]
-      },
-      {
-        "cap": "5:00 PM",
-        "fig": [
-          {
-            "p": "right",
-            "line": "Help. I'm locked out.",
-            "pose": "panic",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "…how?",
-            "pose": "shrug",
-            "mood": "neutral"
-          },
-          {
-            "p": "right",
-            "line": "MFA phone is dead. And lost.",
-            "pose": "shrug",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": "Monday, 9 AM",
-        "fig": [
-          {
-            "p": "left",
-            "line": "Back in?",
-            "pose": "neutral",
-            "mood": "neutral"
-          },
-          {
-            "p": "right",
-            "line": "I worked from my tablet.",
-            "pose": "shrug",
-            "mood": "neutral"
-          },
-          {
-            "p": "left",
-            "line": "Please set up backup MFA.",
-            "pose": "point-right",
-            "mood": "worried"
-          }
-        ]
-      }
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "I lost my phone. Need MFA reset.", "emotion": "worried" },
+        { "speaker": "B", "side": "right", "text": "Policy: 14 business days + in-person ID.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "My laptop requires MFA to unlock.", "emotion": "worried" },
+        { "speaker": "B", "side": "right", "text": "Right.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "Email requires MFA to access the form.", "emotion": "angry" },
+        { "speaker": "B", "side": "right", "text": "Also right.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "How do I work for 14 days?", "emotion": "shocked" },
+        { "speaker": "B", "side": "right", "text": "You don't.", "emotion": "flat" },
+        { "speaker": "A", "side": "left",  "text": "Policy is policy.", "emotion": "flat" }
+      ]}
     ]
   },
   {
-    "title": "Quarterly Review",
-    "premise": "manager \"approve all\" without reading the access review",
+    "title": "Role Roulette",
+    "premise": "The Database Admin role now grants Slack, GitHub, and printer admin. Nobody knows why.",
     "panels": [
-      {
-        "cap": "Access Review",
-        "fig": [
-          {
-            "p": "left",
-            "line": "200 accounts to review.",
-            "pose": "neutral",
-            "mood": "neutral"
-          },
-          {
-            "p": "right",
-            "line": "I'll knock it out quick.",
-            "pose": "neutral",
-            "mood": "happy"
-          }
-        ]
-      },
-      {
-        "cap": "3 minutes later",
-        "fig": [
-          {
-            "p": "right",
-            "line": "Approved! All done.",
-            "pose": "neutral",
-            "mood": "happy"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "You approved the contractor from 2021?",
-            "pose": "point-right",
-            "mood": "worried"
-          },
-          {
-            "p": "right",
-            "line": "All looked fine to me!",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "They haven't worked here in 3 years.",
-            "pose": "neutral",
-            "mood": "worried"
-          },
-          {
-            "p": "right",
-            "line": "So… re-review?",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      }
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "Why does DB Admin have Slack admin?", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "Legacy reasons.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "And GitHub admin? And printer admin?", "emotion": "worried" },
+        { "speaker": "B", "side": "right", "text": "Someone needed access once. Easier to add.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "In 2017?", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "We've been adding ever since.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "This isn't a role. It's a wishlist.", "emotion": "angry" },
+        { "speaker": "B", "side": "right", "text": "…yes.", "emotion": "flat" }
+      ]}
     ]
   },
   {
-    "title": "But It's Annoying",
-    "premise": "user complains about MFA; \"so is a breach.\"",
+    "title": "Least Privilege Paradox",
+    "premise": "Devs have no prod access for security. Production breaks. They can't see the logs to fix it.",
     "panels": [
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "Can you turn off MFA for me?",
-            "pose": "neutral",
-            "mood": "happy"
-          },
-          {
-            "p": "left",
-            "line": "No.",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "It's SO annoying to use!",
-            "pose": "panic",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "You know what's more annoying?",
-            "pose": "point-right",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "A breach.",
-            "pose": "neutral",
-            "mood": "neutral"
-          },
-          {
-            "p": "right",
-            "line": "…fine.",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      }
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "Prod is broken. I need to check the logs.", "emotion": "worried" },
+        { "speaker": "B", "side": "right", "text": "No prod access for devs. Security policy.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "Can YOU check?", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "Submit a ticket. SLA: 4 hours.", "emotion": "flat" },
+        { "speaker": "A", "side": "left",  "text": "It's down NOW.", "emotion": "angry" }
+      ]},
+      { "cap": "4 hours later", "beats": [
+        { "speaker": "B", "side": "right", "text": "Access approved. What do you need?", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "I already fixed it. Guessed and restarted.", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "Very secure.", "emotion": "flat" },
+        { "speaker": "A", "side": "left",  "text": "Very.", "emotion": "flat" }
+      ]}
     ]
   },
   {
-    "title": "Who Owns This?",
-    "premise": "all-hands: \"who owns the system?\" everyone points at you. Bus factor: 1",
+    "title": "The sudo !! Incident",
+    "premise": "Junior dev escalates the wrong command with sudo !! and becomes a legend in the incident report.",
     "panels": [
-      {
-        "cap": "All-hands",
-        "fig": [
-          {
-            "p": "center",
-            "line": "Who owns the IAM system?",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "*points right*",
-            "pose": "point-right",
-            "mood": "neutral"
-          },
-          {
-            "p": "right",
-            "line": "*points left*",
-            "pose": "point-left",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "center",
-            "line": "Everyone is pointing at you.",
-            "pose": "neutral",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "Bus factor: 1.",
-            "pose": "shrug",
-            "mood": "neutral"
-          },
-          {
-            "p": "right",
-            "line": "Classic.",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      }
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "I typed sudo !! by accident.", "emotion": "worried" },
+        { "speaker": "B", "side": "right", "text": "What was the previous command?", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left", "text": "rm -rf /", "emotion": "shocked" }
+      ]},
+      { "cap": "…", "beats": [
+        { "speaker": "B", "side": "right", "text": "…", "emotion": "shocked" },
+        { "speaker": "A", "side": "left",  "text": "…", "emotion": "shocked" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "Call backups. Now.", "emotion": "angry" },
+        { "speaker": "A", "side": "left",  "text": "It's probably fine.", "emotion": "worried" },
+        { "speaker": "B", "side": "right", "text": "It is not fine.", "emotion": "angry" }
+      ]}
     ]
   },
   {
-    "title": "Paid Time Off",
-    "premise": "you take PTO; \"bring your laptop.\" It wasn't really PTO",
+    "title": "Approver Roulette",
+    "premise": "Access request bounces between approvers for 3 weeks. Auto-closes after 30 days with no action.",
     "panels": [
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "Taking PTO next week!",
-            "pose": "neutral",
-            "mood": "happy"
-          },
-          {
-            "p": "right",
-            "line": "Great! Bring your laptop.",
-            "pose": "neutral",
-            "mood": "happy"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "…why?",
-            "pose": "neutral",
-            "mood": "worried"
-          },
-          {
-            "p": "right",
-            "line": "Just in case.",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": "Day 1 of PTO",
-        "fig": [
-          {
-            "p": "right",
-            "line": "Quick question about provisioning…",
-            "pose": "point-right",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "This is not really PTO.",
-            "pose": "shrug",
-            "mood": "worried"
-          },
-          {
-            "p": "right",
-            "line": "Think of it as… remote work!",
-            "pose": "neutral",
-            "mood": "happy"
-          }
-        ]
-      }
+      { "cap": "Week 1", "beats": [
+        { "speaker": "none", "side": null, "text": "Request sent to Alice.", "emotion": "flat" },
+        { "speaker": "A",    "side": "left", "text": "Ask Bob.", "emotion": "flat" }
+      ]},
+      { "cap": "Week 2", "beats": [
+        { "speaker": "none", "side": null,   "text": "Sent to Bob.", "emotion": "flat" },
+        { "speaker": "B",    "side": "right", "text": "Ask Carol.", "emotion": "flat" },
+        { "speaker": "none", "side": null,   "text": "Carol: ask Alice.", "emotion": "flat" }
+      ]},
+      { "cap": "Week 3", "beats": [
+        { "speaker": "A", "side": "left", "text": "Alice is on sabbatical.", "emotion": "flat" }
+      ]},
+      { "cap": "Day 30", "beats": [
+        { "speaker": "none", "side": null,   "text": "REQUEST AUTO-CLOSED: No Response.", "emotion": "flat" },
+        { "speaker": "B",    "side": "right", "text": "I'll resubmit.", "emotion": "worried" },
+        { "speaker": "A",    "side": "left",  "text": "See you in month two.", "emotion": "flat" }
+      ]}
     ]
   },
   {
-    "title": "We Do Not Speak Of It",
-    "premise": "a service account last rotated in 2018 that you're afraid to touch",
+    "title": "Compliance Theater",
+    "premise": "Annual access review. Manager approves everything in 3 minutes without reading any of it.",
     "panels": [
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "This key was last rotated… 2018?",
-            "pose": "point-right",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "We don't talk about that key.",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "Shouldn't we rotate it?",
-            "pose": "neutral",
-            "mood": "neutral"
-          },
-          {
-            "p": "left",
-            "line": "Last engineer who tried is gone.",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "They quit?",
-            "pose": "neutral",
-            "mood": "worried"
-          },
-          {
-            "p": "left",
-            "line": "Promoted. To a quieter team.",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      }
+      { "cap": "Access Review Day", "beats": [
+        { "speaker": "none", "side": null,   "text": "Certify your permissions are correct.", "emotion": "flat" },
+        { "speaker": "B",    "side": "right", "text": "Do you know what half these systems are?", "emotion": "worried" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "No.", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "Are these permissions correct?", "emotion": "flat" },
+        { "speaker": "A", "side": "left",  "text": "No idea.", "emotion": "flat" }
+      ]},
+      { "cap": "3 minutes later", "beats": [
+        { "speaker": "A", "side": "left", "text": "[Clicks Approve All]", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "none", "side": null,   "text": "COMPLIANCE SCORE: 100%", "emotion": "flat" },
+        { "speaker": "B",    "side": "right", "text": "Certified chaos.", "emotion": "flat" },
+        { "speaker": "A",    "side": "left",  "text": "Same time next year.", "emotion": "flat" }
+      ]}
     ]
   },
   {
-    "title": "Onboarding",
-    "premise": "three approvals later the new hire has access… and already quit",
+    "title": "Dave Lives On",
+    "premise": "Dave left 18 months ago. His admin credentials are in a shared doc his old team still uses.",
     "panels": [
-      {
-        "cap": "Week 1",
-        "fig": [
-          {
-            "p": "right",
-            "line": "New hire needs access!",
-            "pose": "neutral",
-            "mood": "happy"
-          },
-          {
-            "p": "left",
-            "line": "Three approvals required.",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": "Week 2",
-        "fig": [
-          {
-            "p": "left",
-            "line": "Still waiting on approval 2.",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": "Week 3",
-        "fig": [
-          {
-            "p": "left",
-            "line": "All approved! Access granted.",
-            "pose": "neutral",
-            "mood": "happy"
-          }
-        ]
-      },
-      {
-        "cap": "Week 4",
-        "fig": [
-          {
-            "p": "right",
-            "line": "They quit yesterday.",
-            "pose": "shrug",
-            "mood": "worried"
-          },
-          {
-            "p": "left",
-            "line": "Deprovision immediately then.",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      }
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "Did we deprovision Dave? He left 18 months ago.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left", "text": "Dave has admin on prod, staging, billing, and GitHub.", "emotion": "shocked" },
+        { "speaker": "A", "side": "left", "text": "And he logged in last week.", "emotion": "worried" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "WHAT.", "emotion": "angry" },
+        { "speaker": "A", "side": "left",  "text": "His creds are in a doc his old team still uses.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "We've been logging in as Dave for 18 months.", "emotion": "shocked" },
+        { "speaker": "A", "side": "left",  "text": "Dave lives on.", "emotion": "flat" },
+        { "speaker": "B", "side": "right", "text": "Revoke Dave.", "emotion": "angry" }
+      ]}
     ]
   },
   {
-    "title": "It's Documented",
-    "premise": "\"where?\" \"my head.\" \"…write it down.\" Bus factor intensifies",
+    "title": "Quick Test Don't Mind This",
+    "premise": "Developer commits .env file with prod keys to a public repo. Commit message: quick test don't mind this.",
     "panels": [
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "Where's the runbook for this?",
-            "pose": "neutral",
-            "mood": "neutral"
-          },
-          {
-            "p": "left",
-            "line": "It's documented.",
-            "pose": "neutral",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "Where?",
-            "pose": "neutral",
-            "mood": "neutral"
-          },
-          {
-            "p": "left",
-            "line": "My head.",
-            "pose": "point-left",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "right",
-            "line": "…write it down?",
-            "pose": "neutral",
-            "mood": "worried"
-          },
-          {
-            "p": "left",
-            "line": "I know where it is.",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": "Bus factor: still 1",
-        "fig": [
-          {
-            "p": "right",
-            "line": "Bus factor intensifies.",
-            "pose": "panic",
-            "mood": "worried"
-          },
-          {
-            "p": "left",
-            "line": "I'm fine!",
-            "pose": "neutral",
-            "mood": "happy"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "Do Not Disturb",
-    "premise": "Constant interruptions while managing a critical IAM incident.",
-    "panels": [
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "Urgent IAM issue, need focus...",
-            "pose": "neutral",
-            "mood": "worried"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "Can you reset my password?",
-            "pose": "point-left",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "left",
-            "line": "Printer is jammed. Help?",
-            "pose": "point-left",
-            "mood": "neutral"
-          }
-        ]
-      },
-      {
-        "cap": null,
-        "fig": [
-          {
-            "p": "center",
-            "line": "IAM: identity, access, misfortune.",
-            "pose": "shrug",
-            "mood": "neutral"
-          }
-        ]
-      }
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "Why is our API key rotating every hour?", "emotion": "flat" },
+        { "speaker": "A", "side": "left",  "text": "Security alert triggered.", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left",  "text": "Someone committed a .env to a public repo.", "emotion": "worried" },
+        { "speaker": "B", "side": "right", "text": "Commit message?", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "A", "side": "left", "text": "quick test don't mind this", "emotion": "flat" }
+      ]},
+      { "cap": null, "beats": [
+        { "speaker": "B", "side": "right", "text": "Prod keys, DB passwords, CEO home address.", "emotion": "shocked" },
+        { "speaker": "A", "side": "left",  "text": "Rotating everything.", "emotion": "worried" },
+        { "speaker": "B", "side": "right", "text": "Rotate faster.", "emotion": "angry" }
+      ]}
     ]
   }
 ]

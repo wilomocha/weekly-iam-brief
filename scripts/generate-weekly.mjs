@@ -250,20 +250,21 @@ async function generateFeed() {
 }
 
 // ── Comic ─────────────────────────────────────────────────────────────────────
-const VALID_POSES = new Set(['neutral', 'panic', 'shrug', 'point-left', 'point-right'])
-const VALID_MOODS = new Set(['neutral', 'happy', 'worried'])
-const VALID_POS   = new Set(['left', 'right', 'center'])
+const VALID_SPEAKERS  = new Set(['A', 'B', 'C', 'none'])
+const VALID_SIDES     = new Set(['left', 'right', null])
+const VALID_EMOTIONS  = new Set(['flat', 'worried', 'angry', 'happy', 'shocked'])
 
 function validateComic(c) {
   if (!c || typeof c.title !== 'string' || !c.title.trim()) throw new Error('missing title')
+  if (!c.premise || typeof c.premise !== 'string') throw new Error('missing premise')
   if (!Array.isArray(c.panels) || c.panels.length !== 4) throw new Error('need exactly 4 panels')
   for (const panel of c.panels) {
-    if (!Array.isArray(panel.fig) || panel.fig.length < 1) throw new Error('panel needs fig array')
-    for (const f of panel.fig) {
-      if (!VALID_POS.has(f.p))    throw new Error(`bad position: ${f.p}`)
-      if (!VALID_POSES.has(f.pose)) throw new Error(`bad pose: ${f.pose}`)
-      if (!VALID_MOODS.has(f.mood)) throw new Error(`bad mood: ${f.mood}`)
-      if (typeof f.line !== 'string' || !f.line.trim()) throw new Error('fig needs line text')
+    if (!Array.isArray(panel.beats) || panel.beats.length < 1) throw new Error('panel needs beats array')
+    for (const b of panel.beats) {
+      if (!VALID_SPEAKERS.has(b.speaker)) throw new Error(`bad speaker: ${b.speaker}`)
+      if (!VALID_SIDES.has(b.side ?? null)) throw new Error(`bad side: ${b.side}`)
+      if (!VALID_EMOTIONS.has(b.emotion)) throw new Error(`bad emotion: ${b.emotion}`)
+      if (typeof b.text !== 'string' || !b.text.trim()) throw new Error('beat needs text')
     }
   }
 }
@@ -277,45 +278,55 @@ function parseComic(text) {
 async function generateComic(existingComics) {
   console.log(`Generating comic (${existingComics.length} existing)…`)
 
-  const existingPremises = existingComics
-    .map((c, i) => `${i + 1}. ${c.title} — ${c.premise || c.title}`)
+  const existingList = existingComics
+    .map((c, i) => `${i + 1}. "${c.title}" — ${c.premise || c.title}`)
     .join('\n')
 
   const schema = `{
-  "title": "short strip title",
-  "premise": "one-sentence premise description",
+  "title": "short strip title (3-5 words)",
+  "premise": "one-sentence description of the joke premise",
   "panels": [
     {
-      "cap": "optional caption string or null",
-      "fig": [
+      "cap": "optional scene caption string, or null",
+      "beats": [
         {
-          "p": "left|right|center",
-          "line": "speech bubble text (keep under 40 chars)",
-          "pose": "neutral|panic|shrug|point-left|point-right",
-          "mood": "neutral|happy|worried"
+          "speaker": "A or B or C or none",
+          "side": "left or right or null (null only when speaker is none)",
+          "text": "what this speaker says (keep under 45 chars)",
+          "emotion": "flat or worried or angry or happy or shocked"
         }
       ]
     }
   ]
 }`
 
-  const prompt = `You are writing a 4-panel stick-figure comic strip for a weekly IAM (Identity & Access Management) operations dashboard. The audience is a software engineer who is the sole owner of their company's IAM/SSO/secrets systems — dry workplace humour about the absurdities of being the only person who understands access control.
+  const rules = `SPEAKER RULES:
+- "A" is always positioned on the LEFT side of the panel (side must be "left")
+- "B" is always positioned on the RIGHT side of the panel (side must be "right")
+- "C" is a third figure positioned in the CENTER (side must be "right" or "left")
+- "none" is a narration box with no figure (side must be null)
+- Each panel needs 1–3 beats. Use "none" sparingly — only for scene-setting.
 
-EXISTING STRIPS (do NOT repeat any of these themes or premises):
-${existingPremises}
+EMOTION VALUES: flat (deadpan) · worried · angry · shocked · happy
 
-Write ONE new original strip. Rules:
-- Exactly 4 panels.
-- Each panel has an optional caption string (or null) and a "fig" array of 1–3 figures.
-- Keep every "line" under 40 characters so it fits in a speech bubble.
-- Use dry, deadpan humour. No slapstick. Short punchy lines.
-- The punchline lands in panel 4.
-- Pick a fresh angle not covered by the existing strips above.
+DIALOGUE RULES:
+- Keep every "text" field under 45 characters
+- Dry, deadpan tone — like xkcd meets workplace IT horror
+- Punchline lands in panel 4
+- Build tension across panels 1–3
+- Short punchy lines land better than long ones`
 
-Reply with ONLY valid JSON matching this exact schema (no markdown fences, no commentary):
-${schema}
+  const prompt = `You are writing a 4-panel stick-figure comic strip for a weekly IAM security dashboard. The reader is the sole IAM/SSO/secrets engineer at their company — dry workplace humour about access control absurdity.
 
-Valid values — p: "left","right","center" · pose: "neutral","panic","shrug","point-left","point-right" · mood: "neutral","happy","worried"`
+EXISTING STRIPS — do NOT repeat any of these premises:
+${existingList}
+
+Write ONE new original strip on a fresh angle not covered above.
+
+${rules}
+
+Reply with ONLY valid JSON matching this exact schema. No markdown fences, no commentary, no extra text:
+${schema}`
 
   const text = await complete(prompt, { webSearch: false })
   const comic = parseComic(text)
