@@ -1,9 +1,14 @@
 /**
  * Weekly content generator — runs in GitHub Actions, never in the browser.
- * Writes public/feed.json and public/comics.json, which are committed and
- * deployed as static assets.
+ * Writes public/feed.json and public/comics.json.
  *
- * Requires env var: ANTHROPIC_API_KEY
+ * Required env:
+ *   AI_API_KEY   — API key for the chosen provider
+ *
+ * Optional env:
+ *   AI_PROVIDER  — anthropic (default) | openai | xai | openai-compatible
+ *   AI_MODEL     — override the default model for the chosen provider
+ *   AI_BASE_URL  — base URL override (useful for openai-compatible providers)
  */
 
 import { readFileSync, writeFileSync } from 'fs'
@@ -13,38 +18,196 @@ import { dirname, join } from 'path'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const COMICS_PATH = join(ROOT, 'public', 'comics.json')
-const FEED_PATH = join(ROOT, 'public', 'feed.json')
+const FEED_PATH   = join(ROOT, 'public', 'feed.json')
 
-const API = 'https://api.anthropic.com/v1/messages'
-const MODEL = 'claude-sonnet-4-5'
+const AI_KEY      = process.env.AI_API_KEY
+const AI_PROVIDER = (process.env.AI_PROVIDER || 'anthropic').toLowerCase()
+const AI_MODEL    = process.env.AI_MODEL || ''
+const AI_BASE_URL = process.env.AI_BASE_URL || ''
 
-const KEY = process.env.ANTHROPIC_API_KEY
-if (!KEY) { console.error('ANTHROPIC_API_KEY not set'); process.exit(1) }
+if (!AI_KEY) { console.error('AI_API_KEY not set'); process.exit(1) }
 
-async function callAnthropic(payload) {
-  const res = await fetch(API, {
+// ── Provider adapters ─────────────────────────────────────────────────────────
+//
+// Each adapter exports:
+//   complete(prompt, { webSearch }) → string  (the model's text response)
+//
+// "webSearch: true" means the adapter should use the provider's built-in web
+// search capability when available. Providers without native search fall back
+// to knowledge-cutoff data and note it in the prompt.
+
+// ── Anthropic ─────────────────────────────────────────────────────────────────
+const ANTHROPIC_DEFAULTS = {
+  baseUrl: 'https://api.anthropic.com/v1',
+  model: 'claude-sonnet-4-5',
+}
+
+async function completeAnthropic(prompt, { webSearch }) {
+  const { baseUrl, model } = ANTHROPIC_DEFAULTS
+  const resolvedModel = AI_MODEL || model
+
+  const body = {
+    model: resolvedModel,
+    max_tokens: 1500,
+    messages: [{ role: 'user', content: prompt }],
+  }
+  if (webSearch) {
+    body.tools = [{ type: 'web_search_20250305', name: 'web_search' }]
+  }
+
+  const res = await fetch(`${baseUrl}/messages`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': KEY,
+      'x-api-key': AI_KEY,
       'anthropic-version': '2023-06-01',
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(body),
   })
   if (!res.ok) {
-    const txt = await res.text()
-    throw new Error(`Anthropic ${res.status}: ${txt.slice(0, 300)}`)
+    const t = await res.text()
+    throw new Error(`Anthropic ${res.status}: ${t.slice(0, 300)}`)
   }
-  return res.json()
-}
-
-function extractText(data) {
+  const data = await res.json()
   return (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('\n')
 }
 
-// ── Feed ─────────────────────────────────────────────────────────────────────
+// ── OpenAI (Responses API — supports native web_search_preview) ──────────────
+const OPENAI_DEFAULTS = {
+  baseUrl: 'https://api.openai.com/v1',
+  model: 'gpt-4o',
+}
 
-const FOCUS = 'Identity & Access Management (IAM) security: CVEs, vendor advisories (Okta, Microsoft Entra/Azure AD, Ping), credential/identity breaches, CISA guidance'
+async function completeOpenAI(prompt, { webSearch }) {
+  const baseUrl = AI_BASE_URL || OPENAI_DEFAULTS.baseUrl
+  const resolvedModel = AI_MODEL || OPENAI_DEFAULTS.model
+
+  // Use the Responses API when web search is needed (supports web_search_preview tool).
+  // Fall back to Chat Completions for non-search requests.
+  if (webSearch) {
+    const body = {
+      model: resolvedModel,
+      tools: [{ type: 'web_search_preview' }],
+      input: prompt,
+    }
+    const res = await fetch(`${baseUrl}/responses`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${AI_KEY}` },
+      body: JSON.stringify(body),
+    })
+    if (!res.ok) {
+      const t = await res.text()
+      throw new Error(`OpenAI Responses ${res.status}: ${t.slice(0, 300)}`)
+    }
+    const data = await res.json()
+    // Responses API: output is an array of items; grab text content blocks
+    const text = (data.output || [])
+      .flatMap(item => (item.content || []))
+      .filter(b => b.type === 'output_text')
+      .map(b => b.text)
+      .join('\n')
+    if (!text) throw new Error('OpenAI Responses API returned no text output')
+    return text
+  }
+
+  // Chat Completions for comic generation (no web search needed)
+  const body = {
+    model: resolvedModel,
+    max_tokens: 1500,
+    messages: [{ role: 'user', content: prompt }],
+  }
+  const res = await fetch(`${baseUrl}/chat/completions`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${AI_KEY}` },
+    body: JSON.stringify(body),
+  })
+  if (!res.ok) {
+    const t = await res.text()
+    throw new Error(`OpenAI Chat ${res.status}: ${t.slice(0, 300)}`)
+  }
+  const data = await res.json()
+  return data.choices?.[0]?.message?.content || ''
+}
+
+// ── xAI / Grok (OpenAI-compatible + search_parameters for live search) ────────
+const XAI_DEFAULTS = {
+  baseUrl: 'https://api.x.ai/v1',
+  model: 'grok-3',
+}
+
+async function completeXAI(prompt, { webSearch }) {
+  const baseUrl = AI_BASE_URL || XAI_DEFAULTS.baseUrl
+  const resolvedModel = AI_MODEL || XAI_DEFAULTS.model
+
+  const body = {
+    model: resolvedModel,
+    max_tokens: 1500,
+    messages: [{ role: 'user', content: prompt }],
+  }
+  // Grok live search is enabled via search_parameters in the request body
+  if (webSearch) {
+    body.search_parameters = { mode: 'auto' }
+  }
+
+  const res = await fetch(`${baseUrl}/chat/completions`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${AI_KEY}` },
+    body: JSON.stringify(body),
+  })
+  if (!res.ok) {
+    const t = await res.text()
+    throw new Error(`xAI ${res.status}: ${t.slice(0, 300)}`)
+  }
+  const data = await res.json()
+  return data.choices?.[0]?.message?.content || ''
+}
+
+// ── Generic OpenAI-compatible (e.g. Mistral, Together, local Ollama) ──────────
+// No built-in web search; uses Chat Completions only.
+async function completeOpenAICompatible(prompt) {
+  if (!AI_BASE_URL) throw new Error('AI_BASE_URL must be set for openai-compatible provider')
+  const resolvedModel = AI_MODEL
+  if (!resolvedModel) throw new Error('AI_MODEL must be set for openai-compatible provider')
+
+  const body = {
+    model: resolvedModel,
+    max_tokens: 1500,
+    messages: [{ role: 'user', content: prompt }],
+  }
+  const res = await fetch(`${AI_BASE_URL}/chat/completions`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${AI_KEY}` },
+    body: JSON.stringify(body),
+  })
+  if (!res.ok) {
+    const t = await res.text()
+    throw new Error(`OpenAI-compatible ${res.status}: ${t.slice(0, 300)}`)
+  }
+  const data = await res.json()
+  return data.choices?.[0]?.message?.content || ''
+}
+
+// ── Provider dispatch ─────────────────────────────────────────────────────────
+const PROVIDERS_WITH_SEARCH = new Set(['anthropic', 'openai', 'xai'])
+
+async function complete(prompt, { webSearch = false } = {}) {
+  const hasSearch = PROVIDERS_WITH_SEARCH.has(AI_PROVIDER) && webSearch
+  const searchNote = webSearch && !hasSearch
+    ? '\n(Note: live web search not available for this provider — use your most recent training data.)'
+    : ''
+
+  switch (AI_PROVIDER) {
+    case 'anthropic':         return completeAnthropic(prompt + searchNote, { webSearch })
+    case 'openai':            return completeOpenAI(prompt + searchNote, { webSearch })
+    case 'xai':               return completeXAI(prompt + searchNote, { webSearch })
+    case 'openai-compatible': return completeOpenAICompatible(prompt + searchNote)
+    default: throw new Error(`Unknown AI_PROVIDER "${AI_PROVIDER}". Valid: anthropic, openai, xai, openai-compatible`)
+  }
+}
+
+console.log(`Provider: ${AI_PROVIDER}  Model: ${AI_MODEL || '(default)'}`)
+
+// ── Feed ──────────────────────────────────────────────────────────────────────
 const SEV_ORDER = { high: 0, medium: 1, low: 2 }
 
 function sortItems(items) {
@@ -62,7 +225,7 @@ function parseItems(text) {
       if (Array.isArray(p.items)) return p.items
     } catch {}
   }
-  // salvage individual objects
+  // salvage individual item objects
   const items = []
   const re = /\{[^{}]*"title"[^{}]*\}/g
   let hit
@@ -73,29 +236,22 @@ function parseItems(text) {
 }
 
 async function generateFeed() {
-  console.log('Fetching news feed via Anthropic web search…')
+  console.log('Generating news feed…')
   const today = new Date().toISOString().slice(0, 10)
-  const prompt = `Today is ${today}. You are a security operations analyst writing a weekly brief for an engineer who is the SOLE owner of their company's identity/access systems. Use web search (run a few different queries) for the most RECENT items (~past 3 weeks) about: ${FOCUS}. Mix: new CVEs/vulnerabilities, vendor advisories/product changes, identity/credential breaches, and authoritative guidance (CISA/NCSC/NIST). Prioritize things this engineer must ACT on. After searching, reply with ONLY compact JSON of the exact shape {"items":[{...}]} (fields: title, summary <=18 words, category vulnerability|breach|vendor|guidance|trend, severity high|medium|low, actionable true|false, action <=10 words or empty, source publisher, url https://…, date YYYY-MM-DD), AT MOST 5 items, highest severity / most actionable first. Keep every string short so the JSON is complete.`
+  const focus = 'Identity & Access Management (IAM) security: CVEs, vendor advisories (Okta, Microsoft Entra/Azure AD, Ping), credential/identity breaches, CISA guidance'
 
-  const data = await callAnthropic({
-    model: MODEL,
-    max_tokens: 1024,
-    tools: [{ type: 'web_search_20250305', name: 'web_search' }],
-    messages: [{ role: 'user', content: prompt }],
-  })
+  const prompt = `Today is ${today}. You are a security operations analyst writing a weekly brief for an engineer who is the SOLE owner of their company's identity/access systems. Search for (or recall from your most recent knowledge) the most RECENT items (~past 3 weeks) about: ${focus}. Mix: new CVEs/vulnerabilities, vendor advisories/product changes, identity/credential breaches, and authoritative guidance (CISA/NCSC/NIST). Prioritize things this engineer must ACT on. Reply with ONLY compact JSON of the exact shape {"items":[{...}]} (fields: title, summary <=18 words, category vulnerability|breach|vendor|guidance|trend, severity high|medium|low, actionable true|false, action <=10 words or empty, source publisher, url https://…, date YYYY-MM-DD), AT MOST 5 items, highest severity / most actionable first. Keep every string short so the JSON is complete.`
 
-  const text = extractText(data)
+  const text = await complete(prompt, { webSearch: true })
   const items = parseItems(text)
   if (!items.length) throw new Error(`No items parsed. Raw:\n${text.slice(0, 400)}`)
-
   return { items: sortItems(items), generatedAt: new Date().toISOString() }
 }
 
-// ── Comic ────────────────────────────────────────────────────────────────────
-
-const VALID_POSES = ['neutral', 'panic', 'shrug', 'point-left', 'point-right']
-const VALID_MOODS = ['neutral', 'happy', 'worried']
-const VALID_POS = ['left', 'right', 'center']
+// ── Comic ─────────────────────────────────────────────────────────────────────
+const VALID_POSES = new Set(['neutral', 'panic', 'shrug', 'point-left', 'point-right'])
+const VALID_MOODS = new Set(['neutral', 'happy', 'worried'])
+const VALID_POS   = new Set(['left', 'right', 'center'])
 
 function validateComic(c) {
   if (!c || typeof c.title !== 'string' || !c.title.trim()) throw new Error('missing title')
@@ -103,28 +259,28 @@ function validateComic(c) {
   for (const panel of c.panels) {
     if (!Array.isArray(panel.fig) || panel.fig.length < 1) throw new Error('panel needs fig array')
     for (const f of panel.fig) {
-      if (!VALID_POS.includes(f.p)) throw new Error(`bad position: ${f.p}`)
-      if (!VALID_POSES.includes(f.pose)) throw new Error(`bad pose: ${f.pose}`)
-      if (!VALID_MOODS.includes(f.mood)) throw new Error(`bad mood: ${f.mood}`)
+      if (!VALID_POS.has(f.p))    throw new Error(`bad position: ${f.p}`)
+      if (!VALID_POSES.has(f.pose)) throw new Error(`bad pose: ${f.pose}`)
+      if (!VALID_MOODS.has(f.mood)) throw new Error(`bad mood: ${f.mood}`)
       if (typeof f.line !== 'string' || !f.line.trim()) throw new Error('fig needs line text')
     }
   }
 }
 
 function parseComic(text) {
-  // Try to extract a JSON object from the response
   const m = text.match(/\{[\s\S]*\}/)
   if (!m) throw new Error('no JSON object found in response')
   return JSON.parse(m[0])
 }
 
 async function generateComic(existingComics) {
-  console.log(`Generating new comic (${existingComics.length} existing)…`)
+  console.log(`Generating comic (${existingComics.length} existing)…`)
 
-  const existingTitles = existingComics.map(c => `"${c.title}"`).join(', ')
-  const existingPremises = existingComics.map((c, i) => `${i + 1}. ${c.title} — ${c.premise || c.title}`).join('\n')
+  const existingPremises = existingComics
+    .map((c, i) => `${i + 1}. ${c.title} — ${c.premise || c.title}`)
+    .join('\n')
 
-  const schemaDesc = `{
+  const schema = `{
   "title": "short strip title",
   "premise": "one-sentence premise description",
   "panels": [
@@ -156,33 +312,21 @@ Write ONE new original strip. Rules:
 - Pick a fresh angle not covered by the existing strips above.
 
 Reply with ONLY valid JSON matching this exact schema (no markdown fences, no commentary):
-${schemaDesc}
+${schema}
 
-Valid values:
-- p (position): "left", "right", "center"
-- pose: "neutral", "panic", "shrug", "point-left", "point-right"
-- mood: "neutral", "happy", "worried"`
+Valid values — p: "left","right","center" · pose: "neutral","panic","shrug","point-left","point-right" · mood: "neutral","happy","worried"`
 
-  const data = await callAnthropic({
-    model: MODEL,
-    max_tokens: 1200,
-    messages: [{ role: 'user', content: prompt }],
-  })
-
-  const text = extractText(data)
+  const text = await complete(prompt, { webSearch: false })
   const comic = parseComic(text)
   validateComic(comic)
   return comic
 }
 
-// ── Main ─────────────────────────────────────────────────────────────────────
-
+// ── Main ──────────────────────────────────────────────────────────────────────
 async function main() {
-  // Load existing data
   const existingComics = JSON.parse(readFileSync(COMICS_PATH, 'utf8'))
   console.log(`Loaded ${existingComics.length} existing comics.`)
 
-  // Run both jobs; if comic fails we still want to save the feed
   const [feedResult, comicResult] = await Promise.allSettled([
     generateFeed(),
     generateComic(existingComics),
@@ -192,17 +336,16 @@ async function main() {
     writeFileSync(FEED_PATH, JSON.stringify(feedResult.value, null, 2) + '\n')
     console.log(`✓ Feed written (${feedResult.value.items.length} items)`)
   } else {
-    console.error('✗ Feed generation failed:', feedResult.reason.message)
+    console.error('✗ Feed failed:', feedResult.reason.message)
     process.exitCode = 1
   }
 
   if (comicResult.status === 'fulfilled') {
-    const newComic = comicResult.value
-    const updated = [...existingComics, newComic]
-    writeFileSync(COMICS_PATH, JSON.stringify(updated, null, 2) + '\n')
-    console.log(`✓ Comic appended: "${newComic.title}" (total: ${updated.length})`)
+    const comic = comicResult.value
+    writeFileSync(COMICS_PATH, JSON.stringify([...existingComics, comic], null, 2) + '\n')
+    console.log(`✓ Comic appended: "${comic.title}" (total: ${existingComics.length + 1})`)
   } else {
-    console.error('✗ Comic generation failed:', comicResult.reason.message)
+    console.error('✗ Comic failed:', comicResult.reason.message)
     process.exitCode = 1
   }
 }
