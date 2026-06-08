@@ -87,6 +87,7 @@ async function completeOpenAI(prompt, { webSearch }) {
   if (webSearch) {
     const body = {
       model: resolvedModel,
+      max_output_tokens: 1500,
       tools: [{ type: 'web_search_preview' }],
       input: prompt,
     }
@@ -113,7 +114,7 @@ async function completeOpenAI(prompt, { webSearch }) {
   // Chat Completions for comic generation (no web search needed)
   const body = {
     model: resolvedModel,
-    max_tokens: 1500,
+    max_completion_tokens: 1500,
     messages: [{ role: 'user', content: prompt }],
   }
   const res = await fetch(`${baseUrl}/chat/completions`, {
@@ -141,7 +142,7 @@ async function completeXAI(prompt, { webSearch }) {
 
   const body = {
     model: resolvedModel,
-    max_tokens: 1500,
+    max_completion_tokens: 1500,
     messages: [{ role: 'user', content: prompt }],
   }
   // Grok live search is enabled via search_parameters in the request body
@@ -171,7 +172,7 @@ async function completeOpenAICompatible(prompt) {
 
   const body = {
     model: resolvedModel,
-    max_tokens: 1500,
+    max_completion_tokens: 1500,
     messages: [{ role: 'user', content: prompt }],
   }
   const res = await fetch(`${AI_BASE_URL}/chat/completions`, {
