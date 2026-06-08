@@ -23,9 +23,9 @@ jobs:
         run: node scripts/generate-weekly.mjs
         env:
           AI_API_KEY:  ${{ secrets.AI_API_KEY }}
-          AI_PROVIDER: ${{ vars.AI_PROVIDER }}   # repo variable, default empty → anthropic
-          AI_MODEL:    ${{ vars.AI_MODEL }}       # optional model override
-          AI_BASE_URL: ${{ vars.AI_BASE_URL }}    # required only for openai-compatible
+          AI_PROVIDER: ${{ secrets.AI_PROVIDER }}
+          AI_MODEL:    ${{ secrets.AI_MODEL }}
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
 
       - name: Commit updated content
         run: |
