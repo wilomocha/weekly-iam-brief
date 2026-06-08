@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "CVE-2025-59218: Microsoft Entra ID Privilege Escalation",
-      "summary": "Critical flaw allows privilege escalation in Entra ID.",
+      "title": "CVE-2026-31847: FortiAuthenticator RCE",
+      "summary": "Unauthenticated RCE via crafted RADIUS packet.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply Microsoft patch immediately.",
-      "source": "SentinelOne",
-      "url": "https://www.sentinelone.com/vulnerability-database/cve-2025-59218/",
-      "date": "2026-03-11"
+      "action": "Patch immediately",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-05-15"
     },
     {
-      "title": "Scattered Spider Targets IT Help Desks to Bypass MFA",
-      "summary": "Attackers exploit help desks to register devices in IAM systems.",
-      "category": "breach",
-      "severity": "high",
-      "actionable": true,
-      "action": "Enhance help desk security protocols.",
-      "source": "Tech Jacks Solutions",
-      "url": "https://techjacksolutions.com/scc-vendor-rollup/identity-platforms-okta-microsoft-entra-id-ping-identity-and-it-service-desk-functions-vulnerability-rollup-2026-04-20/",
-      "date": "2026-04-20"
-    },
-    {
-      "title": "CVE-2025-55241: Entra ID Cross-Tenant Privilege Escalation",
-      "summary": "Flaw allows cross-tenant admin impersonation in Entra ID.",
+      "title": "CVE-2026-28391: Okta OIDC Token Bypass",
+      "summary": "Token validation flaw allows auth bypass.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Ensure systems are patched.",
-      "source": "Hive Pro",
-      "url": "https://hivepro.com/threat-advisory/cve-2025-55241-critical-cross-tenant-privilege-escalation-in-microsoft-entra-id/",
-      "date": "2025-09-17"
+      "action": "Update Okta configurations",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-05-15"
     },
     {
-      "title": "CISA and NSA Release IAM Best Practices Guide",
-      "summary": "Guidance on securing identity and access management systems.",
-      "category": "guidance",
-      "severity": "medium",
+      "title": "CVE-2026-29104: PingFederate XXE",
+      "summary": "XXE in SAML parser allows SSRF.",
+      "category": "vulnerability",
+      "severity": "high",
       "actionable": true,
-      "action": "Review and implement recommended practices.",
-      "source": "CISA",
-      "url": "https://www.securityinfowatch.com/industry-news/news/53029165/cisa-and-nsa-release-enduring-security-framework-guidance-on-identity-and-access-management",
-      "date": "2023-03-21"
+      "action": "Apply PingFederate patch",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-05-15"
     },
     {
-      "title": "CISA and NSA Issue IAM Guidance for Administrators",
-      "summary": "Best practices for IAM administrators to enhance security.",
-      "category": "guidance",
-      "severity": "medium",
+      "title": "CVE-2026-30582: Azure AD B2C Policy Injection",
+      "summary": "Custom policy XML injection allows privilege escalation.",
+      "category": "vulnerability",
+      "severity": "high",
       "actionable": true,
-      "action": "Implement recommended IAM practices.",
-      "source": "SecurityWeek",
-      "url": "https://www.securityweek.com/cisa-nsa-issue-guidance-for-iam-administrators/",
-      "date": "2023-03-23"
+      "action": "Review and update policies",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-05-15"
+    },
+    {
+      "title": "CISA Warns of SAML Flaws Exploitation",
+      "summary": "Active exploitation of SAML implementation flaws in enterprise SSO products.",
+      "category": "guidance",
+      "severity": "high",
+      "actionable": true,
+      "action": "Review SAML configurations",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-05-15"
     }
   ],
-  "generatedAt": "2026-06-08T16:56:48.054Z"
+  "generatedAt": "2026-06-08T18:43:23.373Z"
 }
