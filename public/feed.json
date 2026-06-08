@@ -1,4 +1,60 @@
 {
-  "items": [],
-  "generatedAt": null
+  "items": [
+    {
+      "title": "CVE-2025-59218: Microsoft Entra ID Privilege Escalation",
+      "summary": "Critical flaw allows privilege escalation in Entra ID.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Apply Microsoft patch immediately.",
+      "source": "SentinelOne",
+      "url": "https://www.sentinelone.com/vulnerability-database/cve-2025-59218/",
+      "date": "2026-03-11"
+    },
+    {
+      "title": "Scattered Spider Targets IT Help Desks to Bypass MFA",
+      "summary": "Attackers exploit help desks to register devices in IAM systems.",
+      "category": "breach",
+      "severity": "high",
+      "actionable": true,
+      "action": "Enhance help desk security protocols.",
+      "source": "Tech Jacks Solutions",
+      "url": "https://techjacksolutions.com/scc-vendor-rollup/identity-platforms-okta-microsoft-entra-id-ping-identity-and-it-service-desk-functions-vulnerability-rollup-2026-04-20/",
+      "date": "2026-04-20"
+    },
+    {
+      "title": "CVE-2025-55241: Entra ID Cross-Tenant Privilege Escalation",
+      "summary": "Flaw allows cross-tenant admin impersonation in Entra ID.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Ensure systems are patched.",
+      "source": "Hive Pro",
+      "url": "https://hivepro.com/threat-advisory/cve-2025-55241-critical-cross-tenant-privilege-escalation-in-microsoft-entra-id/",
+      "date": "2025-09-17"
+    },
+    {
+      "title": "CISA and NSA Release IAM Best Practices Guide",
+      "summary": "Guidance on securing identity and access management systems.",
+      "category": "guidance",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Review and implement recommended practices.",
+      "source": "CISA",
+      "url": "https://www.securityinfowatch.com/industry-news/news/53029165/cisa-and-nsa-release-enduring-security-framework-guidance-on-identity-and-access-management",
+      "date": "2023-03-21"
+    },
+    {
+      "title": "CISA and NSA Issue IAM Guidance for Administrators",
+      "summary": "Best practices for IAM administrators to enhance security.",
+      "category": "guidance",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Implement recommended IAM practices.",
+      "source": "SecurityWeek",
+      "url": "https://www.securityweek.com/cisa-nsa-issue-guidance-for-iam-administrators/",
+      "date": "2023-03-23"
+    }
+  ],
+  "generatedAt": "2026-06-08T16:56:48.054Z"
 }

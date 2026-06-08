@@ -3,120 +3,854 @@
     "title": "Title Creep",
     "premise": "\"you own the system\" snowballs into IAM, then security, then the printers",
     "panels": [
-      { "cap": "Monday",    "fig": [{ "p": "left",  "line": "You own the IAM system.",              "pose": "neutral",     "mood": "happy"   }] },
-      { "cap": "Tuesday",   "fig": [{ "p": "right", "line": "Also security now.",                   "pose": "point-right", "mood": "worried" }, { "p": "left", "line": "…okay?", "pose": "shrug", "mood": "neutral" }] },
-      { "cap": "Wednesday", "fig": [{ "p": "right", "line": "And the printers.",                    "pose": "point-right", "mood": "neutral" }, { "p": "left", "line": "The printers?!", "pose": "panic", "mood": "worried" }] },
-      { "cap": "Friday",    "fig": [{ "p": "left",  "line": "I just handle Identity & Access.",     "pose": "neutral",     "mood": "neutral" }, { "p": "right", "line": "Great. The copier needs MFA.", "pose": "neutral", "mood": "happy" }] }
+      {
+        "cap": "Monday",
+        "fig": [
+          {
+            "p": "left",
+            "line": "You own the IAM system.",
+            "pose": "neutral",
+            "mood": "happy"
+          }
+        ]
+      },
+      {
+        "cap": "Tuesday",
+        "fig": [
+          {
+            "p": "right",
+            "line": "Also security now.",
+            "pose": "point-right",
+            "mood": "worried"
+          },
+          {
+            "p": "left",
+            "line": "…okay?",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": "Wednesday",
+        "fig": [
+          {
+            "p": "right",
+            "line": "And the printers.",
+            "pose": "point-right",
+            "mood": "neutral"
+          },
+          {
+            "p": "left",
+            "line": "The printers?!",
+            "pose": "panic",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": "Friday",
+        "fig": [
+          {
+            "p": "left",
+            "line": "I just handle Identity & Access.",
+            "pose": "neutral",
+            "mood": "neutral"
+          },
+          {
+            "p": "right",
+            "line": "Great. The copier needs MFA.",
+            "pose": "neutral",
+            "mood": "happy"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "The Bus Factor",
     "premise": "\"what if a bus hits you?\" → nobody can reset passwords → \"so don't.\"",
     "panels": [
-      { "cap": null, "fig": [{ "p": "right", "line": "What if a bus hits you?",           "pose": "neutral", "mood": "worried" }, { "p": "left", "line": "…pardon?", "pose": "shrug", "mood": "neutral" }] },
-      { "cap": null, "fig": [{ "p": "right", "line": "Nobody can reset passwords!",       "pose": "panic",   "mood": "worried" }] },
-      { "cap": null, "fig": [{ "p": "left",  "line": "So… don't get hit by a bus?",       "pose": "neutral", "mood": "neutral" }] },
-      { "cap": null, "fig": [{ "p": "right", "line": "That's your continuity plan?",      "pose": "point-right", "mood": "worried" }, { "p": "left", "line": "Bus factor: 1.", "pose": "shrug", "mood": "neutral" }] }
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "What if a bus hits you?",
+            "pose": "neutral",
+            "mood": "worried"
+          },
+          {
+            "p": "left",
+            "line": "…pardon?",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "Nobody can reset passwords!",
+            "pose": "panic",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "So… don't get hit by a bus?",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "That's your continuity plan?",
+            "pose": "point-right",
+            "mood": "worried"
+          },
+          {
+            "p": "left",
+            "line": "Bus factor: 1.",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "Just In Case",
     "premise": "user wants access to \"everything, just in case\"; you hold least-privilege",
     "panels": [
-      { "cap": null, "fig": [{ "p": "right", "line": "I need access to everything.",    "pose": "neutral", "mood": "happy"   }, { "p": "left", "line": "Everything?", "pose": "neutral", "mood": "worried" }] },
-      { "cap": null, "fig": [{ "p": "right", "line": "Just in case! You never know.",   "pose": "shrug",   "mood": "neutral" }] },
-      { "cap": null, "fig": [{ "p": "left",  "line": "What's the actual use case?",     "pose": "point-right", "mood": "neutral" }, { "p": "right", "line": "…vibes mostly.", "pose": "shrug", "mood": "happy" }] },
-      { "cap": null, "fig": [{ "p": "left",  "line": "Here's read-only on staging.",    "pose": "neutral", "mood": "neutral" }, { "p": "right", "line": "That's not everything!", "pose": "panic", "mood": "worried" }, { "p": "left", "line": "Correct.", "pose": "neutral", "mood": "neutral" }] }
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "I need access to everything.",
+            "pose": "neutral",
+            "mood": "happy"
+          },
+          {
+            "p": "left",
+            "line": "Everything?",
+            "pose": "neutral",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "Just in case! You never know.",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "What's the actual use case?",
+            "pose": "point-right",
+            "mood": "neutral"
+          },
+          {
+            "p": "right",
+            "line": "…vibes mostly.",
+            "pose": "shrug",
+            "mood": "happy"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "Here's read-only on staging.",
+            "pose": "neutral",
+            "mood": "neutral"
+          },
+          {
+            "p": "right",
+            "line": "That's not everything!",
+            "pose": "panic",
+            "mood": "worried"
+          },
+          {
+            "p": "left",
+            "line": "Correct.",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "The Ghost Account",
     "premise": "a mystery service account from years ago that has admin; nobody touches it",
     "panels": [
-      { "cap": null, "fig": [{ "p": "right", "line": "What's svc-legacy-admin?",               "pose": "point-right", "mood": "neutral" }, { "p": "left", "line": "Do. Not. Touch. It.", "pose": "neutral", "mood": "worried" }] },
-      { "cap": null, "fig": [{ "p": "right", "line": "It has admin on everything!",            "pose": "panic",       "mood": "worried" }] },
-      { "cap": null, "fig": [{ "p": "left",  "line": "I know. We're afraid of it.",            "pose": "shrug",       "mood": "neutral" }, { "p": "right", "line": "Who owns it?", "pose": "neutral", "mood": "neutral" }] },
-      { "cap": null, "fig": [{ "p": "left",  "line": "Dave. Dave left in 2019.",               "pose": "neutral",     "mood": "worried" }, { "p": "right", "line": "Rotate it!", "pose": "point-right", "mood": "worried" }, { "p": "left", "line": "Last time we tried, billing broke.", "pose": "shrug", "mood": "neutral" }] }
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "What's svc-legacy-admin?",
+            "pose": "point-right",
+            "mood": "neutral"
+          },
+          {
+            "p": "left",
+            "line": "Do. Not. Touch. It.",
+            "pose": "neutral",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "It has admin on everything!",
+            "pose": "panic",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "I know. We're afraid of it.",
+            "pose": "shrug",
+            "mood": "neutral"
+          },
+          {
+            "p": "right",
+            "line": "Who owns it?",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "Dave. Dave left in 2019.",
+            "pose": "neutral",
+            "mood": "worried"
+          },
+          {
+            "p": "right",
+            "line": "Rotate it!",
+            "pose": "point-right",
+            "mood": "worried"
+          },
+          {
+            "p": "left",
+            "line": "Last time we tried, billing broke.",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "Friday, 4:59 PM",
     "premise": "someone gets locked out exactly as the weekend starts",
     "panels": [
-      { "cap": "4:59 PM Friday", "fig": [{ "p": "left",  "line": "Have a great weekend!",               "pose": "neutral", "mood": "happy"   }] },
-      { "cap": "5:00 PM",        "fig": [{ "p": "right", "line": "Help. I'm locked out.",               "pose": "panic",   "mood": "worried" }] },
-      { "cap": null,             "fig": [{ "p": "left",  "line": "…how?",                               "pose": "shrug",   "mood": "neutral" }, { "p": "right", "line": "MFA phone is dead. And lost.", "pose": "shrug", "mood": "worried" }] },
-      { "cap": "Monday, 9 AM",   "fig": [{ "p": "left",  "line": "Back in?",                            "pose": "neutral", "mood": "neutral" }, { "p": "right", "line": "I worked from my tablet.", "pose": "shrug", "mood": "neutral" }, { "p": "left", "line": "Please set up backup MFA.", "pose": "point-right", "mood": "worried" }] }
+      {
+        "cap": "4:59 PM Friday",
+        "fig": [
+          {
+            "p": "left",
+            "line": "Have a great weekend!",
+            "pose": "neutral",
+            "mood": "happy"
+          }
+        ]
+      },
+      {
+        "cap": "5:00 PM",
+        "fig": [
+          {
+            "p": "right",
+            "line": "Help. I'm locked out.",
+            "pose": "panic",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "…how?",
+            "pose": "shrug",
+            "mood": "neutral"
+          },
+          {
+            "p": "right",
+            "line": "MFA phone is dead. And lost.",
+            "pose": "shrug",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": "Monday, 9 AM",
+        "fig": [
+          {
+            "p": "left",
+            "line": "Back in?",
+            "pose": "neutral",
+            "mood": "neutral"
+          },
+          {
+            "p": "right",
+            "line": "I worked from my tablet.",
+            "pose": "shrug",
+            "mood": "neutral"
+          },
+          {
+            "p": "left",
+            "line": "Please set up backup MFA.",
+            "pose": "point-right",
+            "mood": "worried"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "Quarterly Review",
     "premise": "manager \"approve all\" without reading the access review",
     "panels": [
-      { "cap": "Access Review",   "fig": [{ "p": "left",  "line": "200 accounts to review.",                    "pose": "neutral", "mood": "neutral" }, { "p": "right", "line": "I'll knock it out quick.", "pose": "neutral", "mood": "happy" }] },
-      { "cap": "3 minutes later", "fig": [{ "p": "right", "line": "Approved! All done.",                         "pose": "neutral", "mood": "happy"   }] },
-      { "cap": null,              "fig": [{ "p": "left",  "line": "You approved the contractor from 2021?",      "pose": "point-right", "mood": "worried" }, { "p": "right", "line": "All looked fine to me!", "pose": "shrug", "mood": "neutral" }] },
-      { "cap": null,              "fig": [{ "p": "left",  "line": "They haven't worked here in 3 years.",        "pose": "neutral", "mood": "worried" }, { "p": "right", "line": "So… re-review?", "pose": "shrug", "mood": "neutral" }] }
+      {
+        "cap": "Access Review",
+        "fig": [
+          {
+            "p": "left",
+            "line": "200 accounts to review.",
+            "pose": "neutral",
+            "mood": "neutral"
+          },
+          {
+            "p": "right",
+            "line": "I'll knock it out quick.",
+            "pose": "neutral",
+            "mood": "happy"
+          }
+        ]
+      },
+      {
+        "cap": "3 minutes later",
+        "fig": [
+          {
+            "p": "right",
+            "line": "Approved! All done.",
+            "pose": "neutral",
+            "mood": "happy"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "You approved the contractor from 2021?",
+            "pose": "point-right",
+            "mood": "worried"
+          },
+          {
+            "p": "right",
+            "line": "All looked fine to me!",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "They haven't worked here in 3 years.",
+            "pose": "neutral",
+            "mood": "worried"
+          },
+          {
+            "p": "right",
+            "line": "So… re-review?",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "But It's Annoying",
     "premise": "user complains about MFA; \"so is a breach.\"",
     "panels": [
-      { "cap": null, "fig": [{ "p": "right", "line": "Can you turn off MFA for me?", "pose": "neutral", "mood": "happy"   }, { "p": "left", "line": "No.", "pose": "neutral", "mood": "neutral" }] },
-      { "cap": null, "fig": [{ "p": "right", "line": "It's SO annoying to use!",     "pose": "panic",   "mood": "worried" }] },
-      { "cap": null, "fig": [{ "p": "left",  "line": "You know what's more annoying?", "pose": "point-right", "mood": "neutral" }] },
-      { "cap": null, "fig": [{ "p": "left",  "line": "A breach.",                    "pose": "neutral", "mood": "neutral" }, { "p": "right", "line": "…fine.", "pose": "shrug", "mood": "neutral" }] }
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "Can you turn off MFA for me?",
+            "pose": "neutral",
+            "mood": "happy"
+          },
+          {
+            "p": "left",
+            "line": "No.",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "It's SO annoying to use!",
+            "pose": "panic",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "You know what's more annoying?",
+            "pose": "point-right",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "A breach.",
+            "pose": "neutral",
+            "mood": "neutral"
+          },
+          {
+            "p": "right",
+            "line": "…fine.",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "Who Owns This?",
     "premise": "all-hands: \"who owns the system?\" everyone points at you. Bus factor: 1",
     "panels": [
-      { "cap": "All-hands", "fig": [{ "p": "center", "line": "Who owns the IAM system?",       "pose": "neutral",     "mood": "neutral" }] },
-      { "cap": null,        "fig": [{ "p": "left",   "line": "*points right*",                 "pose": "point-right", "mood": "neutral" }, { "p": "right", "line": "*points left*", "pose": "point-left", "mood": "neutral" }] },
-      { "cap": null,        "fig": [{ "p": "center", "line": "Everyone is pointing at you.",   "pose": "neutral",     "mood": "worried" }] },
-      { "cap": null,        "fig": [{ "p": "left",   "line": "Bus factor: 1.",                 "pose": "shrug",       "mood": "neutral" }, { "p": "right", "line": "Classic.", "pose": "neutral", "mood": "neutral" }] }
+      {
+        "cap": "All-hands",
+        "fig": [
+          {
+            "p": "center",
+            "line": "Who owns the IAM system?",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "*points right*",
+            "pose": "point-right",
+            "mood": "neutral"
+          },
+          {
+            "p": "right",
+            "line": "*points left*",
+            "pose": "point-left",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "center",
+            "line": "Everyone is pointing at you.",
+            "pose": "neutral",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "Bus factor: 1.",
+            "pose": "shrug",
+            "mood": "neutral"
+          },
+          {
+            "p": "right",
+            "line": "Classic.",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "Paid Time Off",
     "premise": "you take PTO; \"bring your laptop.\" It wasn't really PTO",
     "panels": [
-      { "cap": null,            "fig": [{ "p": "left",  "line": "Taking PTO next week!",                "pose": "neutral", "mood": "happy"   }, { "p": "right", "line": "Great! Bring your laptop.", "pose": "neutral", "mood": "happy" }] },
-      { "cap": null,            "fig": [{ "p": "left",  "line": "…why?",                                "pose": "neutral", "mood": "worried" }, { "p": "right", "line": "Just in case.", "pose": "shrug", "mood": "neutral" }] },
-      { "cap": "Day 1 of PTO",  "fig": [{ "p": "right", "line": "Quick question about provisioning…",  "pose": "point-right", "mood": "neutral" }] },
-      { "cap": null,            "fig": [{ "p": "left",  "line": "This is not really PTO.",              "pose": "shrug",   "mood": "worried" }, { "p": "right", "line": "Think of it as… remote work!", "pose": "neutral", "mood": "happy" }] }
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "Taking PTO next week!",
+            "pose": "neutral",
+            "mood": "happy"
+          },
+          {
+            "p": "right",
+            "line": "Great! Bring your laptop.",
+            "pose": "neutral",
+            "mood": "happy"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "…why?",
+            "pose": "neutral",
+            "mood": "worried"
+          },
+          {
+            "p": "right",
+            "line": "Just in case.",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": "Day 1 of PTO",
+        "fig": [
+          {
+            "p": "right",
+            "line": "Quick question about provisioning…",
+            "pose": "point-right",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "This is not really PTO.",
+            "pose": "shrug",
+            "mood": "worried"
+          },
+          {
+            "p": "right",
+            "line": "Think of it as… remote work!",
+            "pose": "neutral",
+            "mood": "happy"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "We Do Not Speak Of It",
     "premise": "a service account last rotated in 2018 that you're afraid to touch",
     "panels": [
-      { "cap": null, "fig": [{ "p": "right", "line": "This key was last rotated… 2018?",        "pose": "point-right", "mood": "worried" }] },
-      { "cap": null, "fig": [{ "p": "left",  "line": "We don't talk about that key.",            "pose": "neutral",     "mood": "neutral" }] },
-      { "cap": null, "fig": [{ "p": "right", "line": "Shouldn't we rotate it?",                 "pose": "neutral",     "mood": "neutral" }, { "p": "left", "line": "Last engineer who tried is gone.", "pose": "shrug", "mood": "neutral" }] },
-      { "cap": null, "fig": [{ "p": "right", "line": "They quit?",                              "pose": "neutral",     "mood": "worried" }, { "p": "left", "line": "Promoted. To a quieter team.", "pose": "neutral", "mood": "neutral" }] }
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "This key was last rotated… 2018?",
+            "pose": "point-right",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "We don't talk about that key.",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "Shouldn't we rotate it?",
+            "pose": "neutral",
+            "mood": "neutral"
+          },
+          {
+            "p": "left",
+            "line": "Last engineer who tried is gone.",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "They quit?",
+            "pose": "neutral",
+            "mood": "worried"
+          },
+          {
+            "p": "left",
+            "line": "Promoted. To a quieter team.",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "Onboarding",
     "premise": "three approvals later the new hire has access… and already quit",
     "panels": [
-      { "cap": "Week 1", "fig": [{ "p": "right", "line": "New hire needs access!",        "pose": "neutral", "mood": "happy"   }, { "p": "left", "line": "Three approvals required.", "pose": "neutral", "mood": "neutral" }] },
-      { "cap": "Week 2", "fig": [{ "p": "left",  "line": "Still waiting on approval 2.", "pose": "shrug",   "mood": "neutral" }] },
-      { "cap": "Week 3", "fig": [{ "p": "left",  "line": "All approved! Access granted.","pose": "neutral", "mood": "happy"   }] },
-      { "cap": "Week 4", "fig": [{ "p": "right", "line": "They quit yesterday.",          "pose": "shrug",   "mood": "worried" }, { "p": "left", "line": "Deprovision immediately then.", "pose": "neutral", "mood": "neutral" }] }
+      {
+        "cap": "Week 1",
+        "fig": [
+          {
+            "p": "right",
+            "line": "New hire needs access!",
+            "pose": "neutral",
+            "mood": "happy"
+          },
+          {
+            "p": "left",
+            "line": "Three approvals required.",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": "Week 2",
+        "fig": [
+          {
+            "p": "left",
+            "line": "Still waiting on approval 2.",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": "Week 3",
+        "fig": [
+          {
+            "p": "left",
+            "line": "All approved! Access granted.",
+            "pose": "neutral",
+            "mood": "happy"
+          }
+        ]
+      },
+      {
+        "cap": "Week 4",
+        "fig": [
+          {
+            "p": "right",
+            "line": "They quit yesterday.",
+            "pose": "shrug",
+            "mood": "worried"
+          },
+          {
+            "p": "left",
+            "line": "Deprovision immediately then.",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      }
     ]
   },
   {
     "title": "It's Documented",
     "premise": "\"where?\" \"my head.\" \"…write it down.\" Bus factor intensifies",
     "panels": [
-      { "cap": null,                   "fig": [{ "p": "right", "line": "Where's the runbook for this?", "pose": "neutral",     "mood": "neutral" }, { "p": "left", "line": "It's documented.", "pose": "neutral", "mood": "neutral" }] },
-      { "cap": null,                   "fig": [{ "p": "right", "line": "Where?",                        "pose": "neutral",     "mood": "neutral" }, { "p": "left", "line": "My head.", "pose": "point-left", "mood": "neutral" }] },
-      { "cap": null,                   "fig": [{ "p": "right", "line": "…write it down?",               "pose": "neutral",     "mood": "worried" }, { "p": "left", "line": "I know where it is.", "pose": "shrug", "mood": "neutral" }] },
-      { "cap": "Bus factor: still 1",  "fig": [{ "p": "right", "line": "Bus factor intensifies.",       "pose": "panic",       "mood": "worried" }, { "p": "left", "line": "I'm fine!", "pose": "neutral", "mood": "happy" }] }
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "Where's the runbook for this?",
+            "pose": "neutral",
+            "mood": "neutral"
+          },
+          {
+            "p": "left",
+            "line": "It's documented.",
+            "pose": "neutral",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "Where?",
+            "pose": "neutral",
+            "mood": "neutral"
+          },
+          {
+            "p": "left",
+            "line": "My head.",
+            "pose": "point-left",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "right",
+            "line": "…write it down?",
+            "pose": "neutral",
+            "mood": "worried"
+          },
+          {
+            "p": "left",
+            "line": "I know where it is.",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": "Bus factor: still 1",
+        "fig": [
+          {
+            "p": "right",
+            "line": "Bus factor intensifies.",
+            "pose": "panic",
+            "mood": "worried"
+          },
+          {
+            "p": "left",
+            "line": "I'm fine!",
+            "pose": "neutral",
+            "mood": "happy"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Do Not Disturb",
+    "premise": "Constant interruptions while managing a critical IAM incident.",
+    "panels": [
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "Urgent IAM issue, need focus...",
+            "pose": "neutral",
+            "mood": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "Can you reset my password?",
+            "pose": "point-left",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "left",
+            "line": "Printer is jammed. Help?",
+            "pose": "point-left",
+            "mood": "neutral"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "fig": [
+          {
+            "p": "center",
+            "line": "IAM: identity, access, misfortune.",
+            "pose": "shrug",
+            "mood": "neutral"
+          }
+        ]
+      }
     ]
   }
 ]
