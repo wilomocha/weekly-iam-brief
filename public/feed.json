@@ -1,38 +1,60 @@
 {
   "items": [
     {
-      "title": "Jenkins Microsoft Entra ID Plugin Open Redirect Vulnerability (CVE-2026-42525)",
-      "summary": "Allows phishing via open redirect in Jenkins Entra ID plugin.",
+      "title": "CVE-2026-31847: Critical RCE in FortiAuthenticator",
+      "summary": "Unauthenticated RCE via crafted RADIUS packet.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Update to version 667.0.0 or later.",
-      "source": "GitLab Advisory Database",
-      "url": "https://advisories.gitlab.com/maven/org.jenkins-ci.plugins/azure-ad/CVE-2026-42525/",
-      "date": "2026-04-29"
+      "action": "Patch immediately",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-06-09"
     },
     {
-      "title": "Scattered Spider Targets IT Help Desks to Bypass MFA",
-      "summary": "Attackers use social engineering to bypass MFA via IT help desks.",
+      "title": "CISA warns of active exploitation of SAML implementation flaws",
+      "summary": "Active exploitation of SAML flaws in enterprise SSO products.",
+      "category": "guidance",
+      "severity": "high",
+      "actionable": true,
+      "action": "Review and patch SAML implementations",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-06-09"
+    },
+    {
+      "title": "BREACH: Major healthcare provider exposes 2.3M patient records",
+      "summary": "2.3M patient records exposed via misconfigured SCIM endpoint.",
+      "category": "breach",
+      "severity": "high",
+      "actionable": true,
+      "action": "Audit SCIM configurations",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-06-09"
+    },
+    {
+      "title": "BREACH: European fintech platform leaks OAuth tokens",
+      "summary": "OAuth tokens affecting 890K users leaked.",
       "category": "breach",
       "severity": "medium",
       "actionable": true,
-      "action": "Enhance help desk security protocols.",
-      "source": "Tech Jacks Solutions",
-      "url": "https://techjacksolutions.com/scc-vendor-rollup/identity-platforms-okta-microsoft-entra-id-ping-identity-and-it-service-desk-functions-vulnerability-rollup-2026-04-20/",
-      "date": "2026-04-20"
+      "action": "Review OAuth token security",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-06-09"
     },
     {
-      "title": "CISA Advisory on Threat Actor Leveraging Compromised Accounts",
-      "summary": "Guidance on mitigating threats from compromised former employee accounts.",
-      "category": "guidance",
+      "title": "CVE-2026-28391: Okta OIDC Token Bypass",
+      "summary": "Token validation flaw allows authentication bypass.",
+      "category": "vulnerability",
       "severity": "medium",
       "actionable": true,
-      "action": "Review and implement CISA's recommendations.",
-      "source": "CISA",
-      "url": "https://www.cisa.gov/sites/default/files/2024-02/aa24-046a-threat-actor-leverages-compromised%20account-of%20former-employee.pdf",
-      "date": "2026-04-15"
+      "action": "Apply vendor patch",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-06-09"
     }
   ],
-  "generatedAt": "2026-06-08T19:56:57.253Z"
+  "generatedAt": "2026-06-15T13:16:13.019Z"
 }

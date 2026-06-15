@@ -1040,5 +1040,67 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Secret Sprawl Saga",
+    "premise": "Everyone uses personal AWS accounts for prod access, chaos ensues.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Why are prod keys in your personal account?",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "I needed them for a quick fix.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "You know there’s a secure vault, right?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "It was down… and so was everything else.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "I found keys in my email too.",
+            "emotion": "shocked"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Let’s rename this place \"InsecureCloud.\"",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
