@@ -1102,5 +1102,79 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Password Expiry Groundhog Day",
+    "premise": "Passwords expire before change request processes.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "My password expires again tomorrow.",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "You just changed it two days ago!",
+            "emotion": "shocked"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "IT policy: change every 24 hours.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "That's... impractical at best.",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Submit a request for an exception.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "How long does that take?",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "48 hours.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Great. I'll stock up on coffee.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
