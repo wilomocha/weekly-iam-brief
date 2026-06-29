@@ -1176,5 +1176,67 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Forgotten Firewall Frenzy",
+    "premise": "Firewall rules block application needed by everyone.",
+    "panels": [
+      {
+        "cap": "The elusive firewall rule...",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Why can't I access the app?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Firewall settings say it's blocked.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "Who configured these rules?",
+            "emotion": "shocked"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Looks like \"AdminBot\" did.",
+            "emotion": "angry"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "We never had an \"AdminBot\".",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "Great, we've been ghost-admin'd.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
