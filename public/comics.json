@@ -1238,5 +1238,55 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Endless Permission Loop",
+    "premise": "Engineer requests permission, always directed to someone else.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Can you approve my access request?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Ask John, he's the guy for that.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "John sent me back to you.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Ah, a perfect workflow loop.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]

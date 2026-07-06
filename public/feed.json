@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "CVE-2026-45480: Azure AD Elevation of Privilege",
-      "summary": "Improper authentication in Azure AD allows unauthorized privilege escalation.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply patches immediately",
-      "source": "DataComm Networks",
-      "url": "https://www.datacomm.com/feed-post/cve-2026-45480-azure-active-directory-elevation-of-privilege-vulnerability/",
-      "date": "2026-06-18"
-    },
-    {
-      "title": "Microsoft June 2026 Security Advisory (AV26-569)",
-      "summary": "Critical updates for multiple Microsoft products, including Azure services.",
-      "category": "vendor",
-      "severity": "high",
-      "actionable": true,
-      "action": "Review and apply updates",
-      "source": "Canadian Centre for Cyber Security",
-      "url": "https://www.cyber.gc.ca/en/alerts-advisories/microsoft-security-advisory-june-2026-monthly-rollup-av26-569",
-      "date": "2026-06-09"
-    },
-    {
-      "title": "CVE-2026-31847: FortiAuthenticator RCE Vulnerability",
-      "summary": "Unauthenticated RCE via crafted RADIUS authentication packet in FortiAuthenticator.",
+      "title": "CVE-2026-31847: Critical RCE in FortiAuthenticator",
+      "summary": "Unauthenticated RCE via crafted RADIUS packet.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
       "action": "Patch immediately",
       "source": "Identity at the Core",
       "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-06-25"
+      "date": "2026-07-01"
     },
     {
-      "title": "CISA Advisory: SAML Implementation Flaws in SSO Products",
-      "summary": "Active exploitation of SAML flaws in enterprise SSO products reported.",
+      "title": "CISA warns of active exploitation of SAML flaws in enterprise SSO products",
+      "summary": "Active exploitation of SAML implementation flaws.",
       "category": "guidance",
-      "severity": "medium",
+      "severity": "high",
       "actionable": true,
-      "action": "Review and mitigate vulnerabilities",
+      "action": "Review and patch SSO systems",
       "source": "Identity at the Core",
       "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-06-25"
+      "date": "2026-07-01"
     },
     {
-      "title": "CVE-2026-28391: Okta OIDC Token Validation Bypass",
-      "summary": "Token validation flaw allows authentication bypass in specific OIDC configurations.",
+      "title": "BREACH: Major healthcare provider confirms 2.3M patient records exposed via misconfigured SCIM endpoint",
+      "summary": "2.3M patient records exposed due to SCIM misconfiguration.",
+      "category": "breach",
+      "severity": "high",
+      "actionable": true,
+      "action": "Audit SCIM configurations",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-07-01"
+    },
+    {
+      "title": "CVE-2026-28391: Okta OIDC Token Bypass",
+      "summary": "Token validation flaw allows authentication bypass.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Apply Okta's security patch",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-07-01"
+    },
+    {
+      "title": "CVE-2026-29104: PingFederate XXE",
+      "summary": "XXE in SAML metadata parser allows SSRF.",
       "category": "vulnerability",
       "severity": "medium",
       "actionable": true,
-      "action": "Apply patches immediately",
+      "action": "Update PingFederate to latest version",
       "source": "Identity at the Core",
       "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-06-25"
+      "date": "2026-07-01"
     }
   ],
-  "generatedAt": "2026-06-29T12:00:14.424Z"
+  "generatedAt": "2026-07-06T11:28:11.053Z"
 }
