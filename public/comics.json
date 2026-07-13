@@ -1288,5 +1288,67 @@
         ]
       }
     ]
+  },
+  {
+    "title": "The Phantom Audit",
+    "premise": "An audit finds ghost users with inexplicable access.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Who's this 'Ghost User'?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "No clue, they have full access.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "Another legacy mystery?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Perhaps a former employee?",
+            "emotion": "angry"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Maybe management's secret tester.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Great, haunted by ghost policies now.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
