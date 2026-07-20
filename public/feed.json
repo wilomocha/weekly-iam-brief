@@ -1,60 +1,60 @@
 {
   "items": [
     {
+      "title": "Microsoft Patches 622 CVEs: Active SharePoint and AD FS Zero-Days Demand First Action",
+      "summary": "Critical SharePoint and AD FS vulnerabilities actively exploited.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Apply patches immediately",
+      "source": "Tech Times",
+      "url": "https://www.techtimes.com/articles/320687/20260716/microsoft-patches-622-cves-active-sharepoint-ad-fs-zero-days-demand-first-action.htm",
+      "date": "2026-07-16"
+    },
+    {
       "title": "CVE-2026-57100: Critical SSRF in Microsoft Entra Provisioning Service",
-      "summary": "SSRF flaw allows privilege escalation in Entra Provisioning Service.",
+      "summary": "SSRF vulnerability allows privilege escalation in Entra Provisioning Service.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply Microsoft patch immediately",
-      "source": "Microsoft",
-      "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-57100",
-      "date": "2026-07-02"
+      "action": "Apply Microsoft patch",
+      "source": "EchelonGraph",
+      "url": "https://echelongraph.io/pulse/CVE-2026-57100",
+      "date": "2026-07-03"
     },
     {
-      "title": "CVE-2026-45480: Azure AD Privilege Escalation Vulnerability",
-      "summary": "Improper authentication in Azure AD enables remote privilege escalation.",
+      "title": "CVE-2026-31847: Critical RCE in FortiAuthenticator",
+      "summary": "Unauthenticated RCE via crafted RADIUS packet in FortiAuthenticator.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply Microsoft patch immediately",
-      "source": "SentinelOne",
-      "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-45480/",
-      "date": "2026-06-25"
-    },
-    {
-      "title": "CVE-2026-42901: Microsoft Entra ID Privilege Escalation",
-      "summary": "Origin validation error in Entra ID allows privilege escalation.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply Microsoft patch immediately",
-      "source": "SentinelOne",
-      "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-42901/",
-      "date": "2026-05-28"
-    },
-    {
-      "title": "Entra Passkey Enrollment Vishing Targets Microsoft 365 Users",
-      "summary": "Attackers use vishing to enroll passkeys under their control.",
-      "category": "breach",
-      "severity": "medium",
-      "actionable": true,
-      "action": "Educate users; verify passkey enrollments",
-      "source": "BleepingComputer",
-      "url": "https://www.bleepingcomputer.com/news/security/entra-passkey-enrollment-vishing-targets-microsoft-365-users/",
-      "date": "2026-07-08"
+      "action": "Patch immediately",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-07-11"
     },
     {
       "title": "CISA Warns of Active Exploitation of SAML Implementation Flaws",
-      "summary": "CISA reports active exploitation of SAML flaws in SSO products.",
+      "summary": "Active exploitation of SAML flaws in enterprise SSO products.",
       "category": "guidance",
+      "severity": "high",
+      "actionable": true,
+      "action": "Review and patch SSO systems",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-07-11"
+    },
+    {
+      "title": "Okta Security Advisories",
+      "summary": "Recent security advisories for Okta products.",
+      "category": "vendor",
       "severity": "medium",
       "actionable": true,
-      "action": "Review and patch SAML implementations",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/",
-      "date": "2026-07-11"
+      "action": "Review and apply updates",
+      "source": "Okta",
+      "url": "https://trust.okta.com/security-advisories/",
+      "date": "2026-07-01"
     }
   ],
-  "generatedAt": "2026-07-13T10:27:58.218Z"
+  "generatedAt": "2026-07-20T10:12:13.087Z"
 }

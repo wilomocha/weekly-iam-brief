@@ -1350,5 +1350,73 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Admin Snack Time",
+    "premise": "Admin access comes with a snack break perk.",
+    "panels": [
+      {
+        "cap": "IT Office - Morning",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "I need admin access again.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "What for this time?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "To update my snack inventory spreadsheet.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "You're the snack admin now?",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "Every admin role gets a free snack.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "And people wonder why we're fat.",
+            "emotion": "angry"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "I'm just here for the donuts.",
+            "emotion": "happy"
+          }
+        ]
+      }
+    ]
   }
 ]
