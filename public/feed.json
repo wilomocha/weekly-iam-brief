@@ -2,59 +2,59 @@
   "items": [
     {
       "title": "Microsoft Patches 622 CVEs: Active SharePoint and AD FS Zero-Days Demand First Action",
-      "summary": "Critical SharePoint and AD FS vulnerabilities actively exploited.",
+      "summary": "Critical vulnerabilities in SharePoint and AD FS actively exploited.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
       "action": "Apply patches immediately",
-      "source": "Tech Times",
+      "source": "TechTimes",
       "url": "https://www.techtimes.com/articles/320687/20260716/microsoft-patches-622-cves-active-sharepoint-ad-fs-zero-days-demand-first-action.htm",
       "date": "2026-07-16"
     },
     {
-      "title": "CVE-2026-57100: Critical SSRF in Microsoft Entra Provisioning Service",
-      "summary": "SSRF vulnerability allows privilege escalation in Entra Provisioning Service.",
+      "title": "CISA Adds Exploited SharePoint RCE Zero-Day CVE-2026-58644 to KEV",
+      "summary": "CISA warns of active exploitation of SharePoint RCE vulnerability.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply Microsoft patch",
-      "source": "EchelonGraph",
-      "url": "https://echelongraph.io/pulse/CVE-2026-57100",
-      "date": "2026-07-03"
+      "action": "Patch SharePoint servers",
+      "source": "The Hacker News",
+      "url": "https://thehackernews.com/2026/07/cisa-adds-exploited-sharepoint-rce-zero.html",
+      "date": "2026-07-17"
     },
     {
-      "title": "CVE-2026-31847: Critical RCE in FortiAuthenticator",
-      "summary": "Unauthenticated RCE via crafted RADIUS packet in FortiAuthenticator.",
+      "title": "CISA warns admins to patch actively exploited SharePoint flaws",
+      "summary": "Multiple SharePoint vulnerabilities under active exploitation.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Patch immediately",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-07-11"
+      "action": "Update SharePoint immediately",
+      "source": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-patch-actively-exploited-sharepoint-flaws/",
+      "date": "2026-07-15"
     },
     {
-      "title": "CISA Warns of Active Exploitation of SAML Implementation Flaws",
-      "summary": "Active exploitation of SAML flaws in enterprise SSO products.",
+      "title": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
+      "summary": "CISA adds new vulnerabilities, including in AD FS, to KEV catalog.",
       "category": "guidance",
       "severity": "high",
       "actionable": true,
-      "action": "Review and patch SSO systems",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-07-11"
+      "action": "Review and apply patches",
+      "source": "OpenText Cybersecurity Community",
+      "url": "https://community.opentextcybersecurity.com/vulnerability-vault-228/alert-cisa-adds-four-known-exploited-vulnerabilities-to-catalog-release-date-july-14-2026-365027",
+      "date": "2026-07-14"
     },
     {
-      "title": "Okta Security Advisories",
-      "summary": "Recent security advisories for Okta products.",
+      "title": "RC4 deprecation advance dependency test in Microsoft Entra Domain Services",
+      "summary": "Microsoft Entra to disable RC4 encryption; test impacts planned.",
       "category": "vendor",
       "severity": "medium",
       "actionable": true,
-      "action": "Review and apply updates",
-      "source": "Okta",
-      "url": "https://trust.okta.com/security-advisories/",
+      "action": "Prepare for RC4 deprecation",
+      "source": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/rc4-deprecation-advance-dependency-test",
       "date": "2026-07-01"
     }
   ],
-  "generatedAt": "2026-07-20T10:12:13.087Z"
+  "generatedAt": "2026-07-27T10:43:31.373Z"
 }

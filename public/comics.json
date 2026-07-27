@@ -1418,5 +1418,73 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Sandbox Swap Scenario",
+    "premise": "A production incident is resolved using sandbox logs.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Prod is down again.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "And no access to prod logs?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Yup, just sandbox access.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Sandbox logs any help?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "They're surprisingly detailed.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "More than prod logs?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "left",
+            "text": "Sandbox logs fixed prod. Again.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
