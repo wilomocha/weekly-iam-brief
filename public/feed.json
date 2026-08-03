@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "Microsoft Patches 622 CVEs: Active SharePoint and AD FS Zero-Days Demand First Action",
-      "summary": "Critical vulnerabilities in SharePoint and AD FS actively exploited.",
+      "title": "CVE-2026-31847: Critical RCE in FortiAuthenticator",
+      "summary": "Unauthenticated RCE via crafted RADIUS packet.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply patches immediately",
-      "source": "TechTimes",
-      "url": "https://www.techtimes.com/articles/320687/20260716/microsoft-patches-622-cves-active-sharepoint-ad-fs-zero-days-demand-first-action.htm",
-      "date": "2026-07-16"
+      "action": "Patch immediately",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-07-28"
     },
     {
-      "title": "CISA Adds Exploited SharePoint RCE Zero-Day CVE-2026-58644 to KEV",
-      "summary": "CISA warns of active exploitation of SharePoint RCE vulnerability.",
+      "title": "CVE-2026-28391: Okta OIDC Token Bypass",
+      "summary": "Token validation flaw allows auth bypass.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Patch SharePoint servers",
-      "source": "The Hacker News",
-      "url": "https://thehackernews.com/2026/07/cisa-adds-exploited-sharepoint-rce-zero.html",
-      "date": "2026-07-17"
+      "action": "Apply vendor patch",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-07-28"
     },
     {
-      "title": "CISA warns admins to patch actively exploited SharePoint flaws",
-      "summary": "Multiple SharePoint vulnerabilities under active exploitation.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Update SharePoint immediately",
-      "source": "BleepingComputer",
-      "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-patch-actively-exploited-sharepoint-flaws/",
-      "date": "2026-07-15"
-    },
-    {
-      "title": "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
-      "summary": "CISA adds new vulnerabilities, including in AD FS, to KEV catalog.",
+      "title": "CISA warns of SAML flaws in SSO products",
+      "summary": "Active exploitation of SAML implementation flaws.",
       "category": "guidance",
       "severity": "high",
       "actionable": true,
-      "action": "Review and apply patches",
-      "source": "OpenText Cybersecurity Community",
-      "url": "https://community.opentextcybersecurity.com/vulnerability-vault-228/alert-cisa-adds-four-known-exploited-vulnerabilities-to-catalog-release-date-july-14-2026-365027",
-      "date": "2026-07-14"
+      "action": "Review and patch systems",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-07-28"
     },
     {
-      "title": "RC4 deprecation advance dependency test in Microsoft Entra Domain Services",
-      "summary": "Microsoft Entra to disable RC4 encryption; test impacts planned.",
-      "category": "vendor",
+      "title": "Healthcare provider exposes 2.3M records",
+      "summary": "Misconfigured SCIM endpoint leads to data breach.",
+      "category": "breach",
+      "severity": "high",
+      "actionable": true,
+      "action": "Audit SCIM configurations",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-07-28"
+    },
+    {
+      "title": "CVE-2026-29104: PingFederate XXE",
+      "summary": "XXE in SAML parser allows SSRF.",
+      "category": "vulnerability",
       "severity": "medium",
       "actionable": true,
-      "action": "Prepare for RC4 deprecation",
-      "source": "Microsoft Learn",
-      "url": "https://learn.microsoft.com/en-us/entra/identity/domain-services/rc4-deprecation-advance-dependency-test",
-      "date": "2026-07-01"
+      "action": "Update to latest version",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-07-28"
     }
   ],
-  "generatedAt": "2026-07-27T10:43:31.373Z"
+  "generatedAt": "2026-08-03T10:42:57.116Z"
 }
