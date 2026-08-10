@@ -2,7 +2,7 @@
   "items": [
     {
       "title": "CVE-2026-31847: Critical RCE in FortiAuthenticator",
-      "summary": "Unauthenticated RCE via crafted RADIUS packet.",
+      "summary": "Critical RCE vulnerability in FortiAuthenticator; CVSS 9.8; patch immediately.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
@@ -12,49 +12,49 @@
       "date": "2026-07-28"
     },
     {
-      "title": "CVE-2026-28391: Okta OIDC Token Bypass",
-      "summary": "Token validation flaw allows auth bypass.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply vendor patch",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-07-28"
-    },
-    {
-      "title": "CISA warns of SAML flaws in SSO products",
-      "summary": "Active exploitation of SAML implementation flaws.",
+      "title": "CISA Warns of Active Exploitation of SAML Flaws",
+      "summary": "CISA warns of active exploitation of SAML implementation flaws in enterprise SSO products.",
       "category": "guidance",
       "severity": "high",
       "actionable": true,
-      "action": "Review and patch systems",
+      "action": "Review and patch SSO products",
       "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
+      "url": "https://www.identityatcore.org/",
       "date": "2026-07-28"
     },
     {
-      "title": "Healthcare provider exposes 2.3M records",
-      "summary": "Misconfigured SCIM endpoint leads to data breach.",
-      "category": "breach",
+      "title": "CVE-2026-50522: Critical RCE in Microsoft SharePoint",
+      "summary": "Critical RCE vulnerability in Microsoft SharePoint; active exploitation observed.",
+      "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Audit SCIM configurations",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-07-28"
+      "action": "Update SharePoint servers",
+      "source": "CERT-EU",
+      "url": "https://cert.europa.eu/publications/security-advisories/2026",
+      "date": "2026-07-23"
     },
     {
-      "title": "CVE-2026-29104: PingFederate XXE",
-      "summary": "XXE in SAML parser allows SSRF.",
+      "title": "CVE-2026-8451: NetScaler SAML XML Parser Vulnerability",
+      "summary": "Memory overread in NetScaler's SAML XML parser; allows disclosure of tokens and credentials.",
       "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Apply patches",
+      "source": "eSentire",
+      "url": "https://www.esentire.com/security-advisories/recently-disclosed-netscaler-vulnerability-exploited-cve-2026-8451",
+      "date": "2026-07-03"
+    },
+    {
+      "title": "CISA Releases Guidance on Isolating Vital Systems",
+      "summary": "CISA publishes guidance for isolating vital OT systems to protect critical infrastructure.",
+      "category": "guidance",
       "severity": "medium",
       "actionable": true,
-      "action": "Update to latest version",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
+      "action": "Review and implement guidance",
+      "source": "HSToday",
+      "url": "https://www.hstoday.us/federal-pages/dhs/cisa-releases-joint-guidance-to-isolate-operational-technology-and-enabling-systems-in-critical-infrastructure/",
       "date": "2026-07-28"
     }
   ],
-  "generatedAt": "2026-08-03T10:42:57.116Z"
+  "generatedAt": "2026-08-10T08:27:13.547Z"
 }

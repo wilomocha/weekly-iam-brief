@@ -1554,5 +1554,73 @@
         ]
       }
     ]
+  },
+  {
+    "title": "The Access Matrix",
+    "premise": "New hires get trapped in a complex access system.",
+    "panels": [
+      {
+        "cap": "Day 1: New Hire Orientation",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Welcome! Let's get your access setup.",
+            "emotion": "happy"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Just need to pass through the Access Matrix.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "The what now?",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "You need access to get access.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Sounds... efficient.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": "Three weeks later...",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Finally, I got email access!",
+            "emotion": "happy"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Congrats! Now onto VPN...",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
