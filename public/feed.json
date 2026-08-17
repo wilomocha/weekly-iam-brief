@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "CVE-2026-31847: Critical RCE in FortiAuthenticator",
-      "summary": "Critical RCE vulnerability in FortiAuthenticator; CVSS 9.8; patch immediately.",
+      "title": "CISA warns Ivanti ICT ineffective for detecting compromises",
+      "summary": "Ivanti's Integrity Checker Tool fails to detect compromises.",
+      "category": "vendor",
+      "severity": "high",
+      "actionable": true,
+      "action": "Evaluate alternative detection methods",
+      "source": "TechTarget",
+      "url": "https://www.techtarget.com/searchsecurity/news/366571739/CISA-warns-Ivanti-ICT-ineffective-for-detecting-compromises",
+      "date": "2024-02-29"
+    },
+    {
+      "title": "CISA warns of continued Log4Shell exploits in VMware Horizon",
+      "summary": "Ongoing Log4Shell attacks on unpatched VMware systems.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Patch immediately",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-07-28"
+      "action": "Patch VMware Horizon systems",
+      "source": "TechTarget",
+      "url": "https://www.techtarget.com/healthtechsecurity/news/366594757/CISA-Warns-of-Continued-Log4Shell-Exploits-in-VMware-Horizon-Systems",
+      "date": "2022-06-27"
     },
     {
-      "title": "CISA Warns of Active Exploitation of SAML Flaws",
-      "summary": "CISA warns of active exploitation of SAML implementation flaws in enterprise SSO products.",
-      "category": "guidance",
+      "title": "CISA, FBI warn of LockBit attacks on Citrix Bleed",
+      "summary": "LockBit exploits Citrix Bleed vulnerability in Boeing attack.",
+      "category": "breach",
       "severity": "high",
       "actionable": true,
-      "action": "Review and patch SSO products",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/",
-      "date": "2026-07-28"
+      "action": "Patch Citrix systems immediately",
+      "source": "TechTarget",
+      "url": "https://www.techtarget.com/searchsecurity/news/366560575/CISA-FBI-warn-of-LockBit-attacks-on-Citrix-Bleed",
+      "date": "2023-11-21"
     },
     {
-      "title": "CVE-2026-50522: Critical RCE in Microsoft SharePoint",
-      "summary": "Critical RCE vulnerability in Microsoft SharePoint; active exploitation observed.",
+      "title": "CISA marks NAKIVO’s critical backup vulnerability as exploited",
+      "summary": "NAKIVO's backup software vulnerability actively exploited.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Update SharePoint servers",
-      "source": "CERT-EU",
-      "url": "https://cert.europa.eu/publications/security-advisories/2026",
-      "date": "2026-07-23"
+      "action": "Update NAKIVO software",
+      "source": "CSO Online",
+      "url": "https://www.csoonline.com/article/3851481/cisa-marks-nakivos-critical-backup-vulnerability-as-actively-exploited.html",
+      "date": "2025-03-21"
     },
     {
-      "title": "CVE-2026-8451: NetScaler SAML XML Parser Vulnerability",
-      "summary": "Memory overread in NetScaler's SAML XML parser; allows disclosure of tokens and credentials.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply patches",
-      "source": "eSentire",
-      "url": "https://www.esentire.com/security-advisories/recently-disclosed-netscaler-vulnerability-exploited-cve-2026-8451",
-      "date": "2026-07-03"
-    },
-    {
-      "title": "CISA Releases Guidance on Isolating Vital Systems",
-      "summary": "CISA publishes guidance for isolating vital OT systems to protect critical infrastructure.",
+      "title": "CISA and NSA release IAM best practices guide",
+      "summary": "Guidance on securing identity and access management systems.",
       "category": "guidance",
       "severity": "medium",
       "actionable": true,
-      "action": "Review and implement guidance",
-      "source": "HSToday",
-      "url": "https://www.hstoday.us/federal-pages/dhs/cisa-releases-joint-guidance-to-isolate-operational-technology-and-enabling-systems-in-critical-infrastructure/",
-      "date": "2026-07-28"
+      "action": "Implement recommended IAM practices",
+      "source": "CISA",
+      "url": "https://www.cisa.gov/sites/default/files/2023-12/ESF%20IDENTITY%20AND%20ACCESS%20MANAGEMENT%20RECOMMENDED%20BEST%20PRACTICES%20FOR%20ADMINISTRATORS%20PP-23-0248_508C.pdf",
+      "date": "2023-12-01"
     }
   ],
-  "generatedAt": "2026-08-10T08:27:13.547Z"
+  "generatedAt": "2026-08-17T07:53:29.853Z"
 }

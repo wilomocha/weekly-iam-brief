@@ -1622,5 +1622,55 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Legacy System Surprise",
+    "premise": "A legacy system is still the OAuth source of truth.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Did we finally upgrade the OAuth server?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Nope, still running on the mainframe.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "But that's from the '90s!",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Hey, if it's not broken...",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
