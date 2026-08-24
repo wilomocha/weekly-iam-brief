@@ -1672,5 +1672,61 @@
         ]
       }
     ]
+  },
+  {
+    "title": "The Permission Vortex",
+    "premise": "Every login allegedly requires permission from the other system, causing an endless cycle.",
+    "panels": [
+      {
+        "cap": "Monday morning, first login attempt",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "I can't log in; need app permission.",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "App says it needs IAM first.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": "A meeting later...",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "IAM needs SSO permission.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "SSO needs IAM to grant it.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": "And the cycle continues...",
+        "beats": [
+          {
+            "speaker": "none",
+            "side": null,
+            "text": "Welcome to the infinite permission vortex.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]

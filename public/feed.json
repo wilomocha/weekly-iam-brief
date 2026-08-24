@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "CISA warns Ivanti ICT ineffective for detecting compromises",
-      "summary": "Ivanti's Integrity Checker Tool fails to detect compromises.",
+      "title": "CVE-2026-62869: Microsoft Entra ID Authentication Bypass Flaw",
+      "summary": "Entra ID flaw allows authenticated attackers to impersonate identities.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Review Entra ID authentication logs.",
+      "source": "SentinelOne",
+      "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-62869/",
+      "date": "2026-08-13"
+    },
+    {
+      "title": "Microsoft Patches Critical Enterprise Flaws in Entra ID",
+      "summary": "Microsoft addressed multiple critical vulnerabilities in Entra ID.",
       "category": "vendor",
       "severity": "high",
       "actionable": true,
-      "action": "Evaluate alternative detection methods",
-      "source": "TechTarget",
-      "url": "https://www.techtarget.com/searchsecurity/news/366571739/CISA-warns-Ivanti-ICT-ineffective-for-detecting-compromises",
-      "date": "2024-02-29"
+      "action": "Ensure systems are updated.",
+      "source": "CloudLinkTech",
+      "url": "https://www.cloudlinktech.com/news/microsoft-apple-rush-patches-critical-enterprise-flaws/",
+      "date": "2026-08-07"
     },
     {
-      "title": "CISA warns of continued Log4Shell exploits in VMware Horizon",
-      "summary": "Ongoing Log4Shell attacks on unpatched VMware systems.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Patch VMware Horizon systems",
-      "source": "TechTarget",
-      "url": "https://www.techtarget.com/healthtechsecurity/news/366594757/CISA-Warns-of-Continued-Log4Shell-Exploits-in-VMware-Horizon-Systems",
-      "date": "2022-06-27"
-    },
-    {
-      "title": "CISA, FBI warn of LockBit attacks on Citrix Bleed",
-      "summary": "LockBit exploits Citrix Bleed vulnerability in Boeing attack.",
-      "category": "breach",
-      "severity": "high",
-      "actionable": true,
-      "action": "Patch Citrix systems immediately",
-      "source": "TechTarget",
-      "url": "https://www.techtarget.com/searchsecurity/news/366560575/CISA-FBI-warn-of-LockBit-attacks-on-Citrix-Bleed",
-      "date": "2023-11-21"
-    },
-    {
-      "title": "CISA marks NAKIVO’s critical backup vulnerability as exploited",
-      "summary": "NAKIVO's backup software vulnerability actively exploited.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Update NAKIVO software",
-      "source": "CSO Online",
-      "url": "https://www.csoonline.com/article/3851481/cisa-marks-nakivos-critical-backup-vulnerability-as-actively-exploited.html",
-      "date": "2025-03-21"
-    },
-    {
-      "title": "CISA and NSA release IAM best practices guide",
-      "summary": "Guidance on securing identity and access management systems.",
+      "title": "CISA Adds CVE-2026-69836 to Known Exploited Vulnerabilities Catalog",
+      "summary": "CISA lists Entra ID vulnerability as known exploited.",
       "category": "guidance",
+      "severity": "high",
+      "actionable": true,
+      "action": "Review CISA's guidance.",
+      "source": "BlackTree",
+      "url": "https://blacktree.nl/2026/08/21/microsoft-fixed-the-entra-id-zero-day-customers-still-do-not-know-what-the-attackers-reached/",
+      "date": "2026-08-21"
+    },
+    {
+      "title": "CVE-2026-50481: Entra ID Elevation of Privilege Vulnerability",
+      "summary": "Microsoft published Entra ID vulnerability; patch details pending.",
+      "category": "vulnerability",
       "severity": "medium",
       "actionable": true,
-      "action": "Implement recommended IAM practices",
-      "source": "CISA",
-      "url": "https://www.cisa.gov/sites/default/files/2023-12/ESF%20IDENTITY%20AND%20ACCESS%20MANAGEMENT%20RECOMMENDED%20BEST%20PRACTICES%20FOR%20ADMINISTRATORS%20PP-23-0248_508C.pdf",
-      "date": "2023-12-01"
+      "action": "Monitor for patch release.",
+      "source": "WindowsForum",
+      "url": "https://windowsforum.com/security-alerts.84/cve-2026-50481-entra-flaw-no-patch-or-scope-confirmed.441869/",
+      "date": "2026-08-06"
+    },
+    {
+      "title": "CVE-2026-69836: Critical Microsoft Entra ID RCE Vulnerability",
+      "summary": "Microsoft fixed a critical Entra ID flaw; no customer action required.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": false,
+      "action": "",
+      "source": "CyberWorldOps",
+      "url": "https://cyberworldops.eu/en/cve-2026-69836-critical-vulnerability-exploited-in-microsoft-entra-id",
+      "date": "2026-08-21"
     }
   ],
-  "generatedAt": "2026-08-17T07:53:29.853Z"
+  "generatedAt": "2026-08-24T07:58:07.997Z"
 }
