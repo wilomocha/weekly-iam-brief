@@ -1728,5 +1728,73 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Access Request Adventure",
+    "premise": "A change request needs approval from its own system.",
+    "panels": [
+      {
+        "cap": "An Access Request Journey",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "I can't approve your request.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Why not?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "It's pending approval.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Approval from who?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "The system itself.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "We're stuck, aren't we?",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Yup, it's a closed-loop request.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]

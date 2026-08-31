@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "CVE-2026-62869: Microsoft Entra ID Authentication Bypass Flaw",
-      "summary": "Entra ID flaw allows authenticated attackers to impersonate identities.",
+      "title": "CVE-2026-50481: Azure Active Directory Elevation of Privilege Vulnerability",
+      "summary": "Critical vulnerabilities in Azure AD allow privilege escalation and code execution.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Review Entra ID authentication logs.",
-      "source": "SentinelOne",
-      "url": "https://www.sentinelone.com/vulnerability-database/cve-2026-62869/",
-      "date": "2026-08-13"
+      "action": "Apply Microsoft security updates immediately.",
+      "source": "Microsoft",
+      "url": "https://www.csirts.com/cve/CVE-2026-50481",
+      "date": "2026-08-11"
     },
     {
-      "title": "Microsoft Patches Critical Enterprise Flaws in Entra ID",
-      "summary": "Microsoft addressed multiple critical vulnerabilities in Entra ID.",
-      "category": "vendor",
-      "severity": "high",
-      "actionable": true,
-      "action": "Ensure systems are updated.",
-      "source": "CloudLinkTech",
-      "url": "https://www.cloudlinktech.com/news/microsoft-apple-rush-patches-critical-enterprise-flaws/",
-      "date": "2026-08-07"
-    },
-    {
-      "title": "CISA Adds CVE-2026-69836 to Known Exploited Vulnerabilities Catalog",
-      "summary": "CISA lists Entra ID vulnerability as known exploited.",
+      "title": "CISA Advisory: Multiple Vulnerabilities in Microsoft Azure and Entra ID",
+      "summary": "CISA warns of multiple vulnerabilities in Azure and Entra ID.",
       "category": "guidance",
       "severity": "high",
       "actionable": true,
-      "action": "Review CISA's guidance.",
-      "source": "BlackTree",
-      "url": "https://blacktree.nl/2026/08/21/microsoft-fixed-the-entra-id-zero-day-customers-still-do-not-know-what-the-attackers-reached/",
-      "date": "2026-08-21"
+      "action": "Review and apply CISA's recommended mitigations.",
+      "source": "CISA",
+      "url": "https://www.csirts.com/advisory/microsoft-azure-and-entra-id-multiple-1653908",
+      "date": "2026-08-12"
     },
     {
-      "title": "CVE-2026-50481: Entra ID Elevation of Privilege Vulnerability",
-      "summary": "Microsoft published Entra ID vulnerability; patch details pending.",
-      "category": "vulnerability",
+      "title": "Microsoft Entra Security Operations for Privileged Identity Management",
+      "summary": "Guidance on securing privileged accounts in Microsoft Entra.",
+      "category": "guidance",
       "severity": "medium",
       "actionable": true,
-      "action": "Monitor for patch release.",
-      "source": "WindowsForum",
-      "url": "https://windowsforum.com/security-alerts.84/cve-2026-50481-entra-flaw-no-patch-or-scope-confirmed.441869/",
-      "date": "2026-08-06"
+      "action": "Implement recommended security operations.",
+      "source": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-privileged-identity-management",
+      "date": "2026-08-10"
     },
     {
-      "title": "CVE-2026-69836: Critical Microsoft Entra ID RCE Vulnerability",
-      "summary": "Microsoft fixed a critical Entra ID flaw; no customer action required.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": false,
-      "action": "",
-      "source": "CyberWorldOps",
-      "url": "https://cyberworldops.eu/en/cve-2026-69836-critical-vulnerability-exploited-in-microsoft-entra-id",
-      "date": "2026-08-21"
+      "title": "Microsoft Entra Security Operations for Infrastructure",
+      "summary": "Best practices for monitoring and alerting in Microsoft Entra infrastructure.",
+      "category": "guidance",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Establish monitoring and alerting strategies.",
+      "source": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-infrastructure",
+      "date": "2026-08-10"
+    },
+    {
+      "title": "Microsoft Entra Security Operations for Applications",
+      "summary": "Recommendations for securing applications in Microsoft Entra.",
+      "category": "guidance",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Monitor application credentials and permissions.",
+      "source": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-applications",
+      "date": "2026-08-10"
     }
   ],
-  "generatedAt": "2026-08-24T07:58:07.997Z"
+  "generatedAt": "2026-08-31T14:53:25.310Z"
 }
