@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "CVE-2026-50481: Azure Active Directory Elevation of Privilege Vulnerability",
-      "summary": "Critical vulnerabilities in Azure AD allow privilege escalation and code execution.",
+      "title": "CVE-2026-31847: Critical RCE in FortiAuthenticator",
+      "summary": "Unauthenticated RCE via crafted RADIUS packet.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply Microsoft security updates immediately.",
-      "source": "Microsoft",
-      "url": "https://www.csirts.com/cve/CVE-2026-50481",
-      "date": "2026-08-11"
+      "action": "Patch immediately",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-09-07"
     },
     {
-      "title": "CISA Advisory: Multiple Vulnerabilities in Microsoft Azure and Entra ID",
-      "summary": "CISA warns of multiple vulnerabilities in Azure and Entra ID.",
+      "title": "CISA warns of SAML flaws in enterprise SSO products",
+      "summary": "Active exploitation of SAML implementation flaws.",
       "category": "guidance",
       "severity": "high",
       "actionable": true,
-      "action": "Review and apply CISA's recommended mitigations.",
-      "source": "CISA",
-      "url": "https://www.csirts.com/advisory/microsoft-azure-and-entra-id-multiple-1653908",
-      "date": "2026-08-12"
+      "action": "Review and patch SSO systems",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-09-07"
     },
     {
-      "title": "Microsoft Entra Security Operations for Privileged Identity Management",
-      "summary": "Guidance on securing privileged accounts in Microsoft Entra.",
-      "category": "guidance",
-      "severity": "medium",
+      "title": "Okta OIDC Token Bypass Vulnerability",
+      "summary": "Token validation flaw allows auth bypass.",
+      "category": "vulnerability",
+      "severity": "high",
       "actionable": true,
-      "action": "Implement recommended security operations.",
-      "source": "Microsoft",
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-privileged-identity-management",
-      "date": "2026-08-10"
+      "action": "Apply vendor patch",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-09-07"
     },
     {
-      "title": "Microsoft Entra Security Operations for Infrastructure",
-      "summary": "Best practices for monitoring and alerting in Microsoft Entra infrastructure.",
-      "category": "guidance",
+      "title": "PingFederate XXE Vulnerability",
+      "summary": "XXE in SAML parser allows SSRF.",
+      "category": "vulnerability",
       "severity": "medium",
       "actionable": true,
-      "action": "Establish monitoring and alerting strategies.",
-      "source": "Microsoft",
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-infrastructure",
-      "date": "2026-08-10"
+      "action": "Update to latest version",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-09-07"
     },
     {
-      "title": "Microsoft Entra Security Operations for Applications",
-      "summary": "Recommendations for securing applications in Microsoft Entra.",
-      "category": "guidance",
+      "title": "Azure AD B2C Policy Injection Vulnerability",
+      "summary": "Custom policy XML injection allows privilege escalation.",
+      "category": "vulnerability",
       "severity": "medium",
       "actionable": true,
-      "action": "Monitor application credentials and permissions.",
-      "source": "Microsoft",
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-applications",
-      "date": "2026-08-10"
+      "action": "Review and update policies",
+      "source": "Identity at the Core",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-09-07"
     }
   ],
-  "generatedAt": "2026-08-31T14:53:25.310Z"
+  "generatedAt": "2026-09-07T13:19:36.138Z"
 }

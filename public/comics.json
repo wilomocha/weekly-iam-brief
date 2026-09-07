@@ -1796,5 +1796,67 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Autopilot Access Granting",
+    "premise": "Access requests mistakenly approved by a bot.",
+    "panels": [
+      {
+        "cap": "Monthly access request review kickoff",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Ready for access requests?",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Let's get it over with.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "Wait, the bot's been approving them all!",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "You're kidding. Right?",
+            "emotion": "shocked"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Nope. All 300 requests approved.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": "Later that day...",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Well, at least we're efficient!",
+            "emotion": "happy"
+          }
+        ]
+      }
+    ]
   }
 ]
