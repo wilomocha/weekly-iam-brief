@@ -1858,5 +1858,67 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Inconsistent Identities",
+    "premise": "Identity verification requires ID unavailable to everyone.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Need to verify your identity.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "What documents do you need?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Your employee ID card.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "It's digital-only now.",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "We only accept physical copies.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "How convenient.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]

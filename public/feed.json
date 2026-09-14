@@ -9,52 +9,52 @@
       "action": "Patch immediately",
       "source": "Identity at the Core",
       "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-09-07"
+      "date": "2026-09-11"
     },
     {
-      "title": "CISA warns of SAML flaws in enterprise SSO products",
-      "summary": "Active exploitation of SAML implementation flaws.",
+      "title": "Okta Security Advisory: Multiple Vulnerabilities",
+      "summary": "Multiple vulnerabilities in Okta products identified.",
+      "category": "vendor",
+      "severity": "high",
+      "actionable": true,
+      "action": "Review advisories and update",
+      "source": "Okta Support",
+      "url": "https://support.okta.com/help/s/article/security-advisory-summary-september-2026",
+      "date": "2026-09-08"
+    },
+    {
+      "title": "CISA Advisory: Active Exploitation of SAML Flaws",
+      "summary": "CISA warns of active SAML implementation exploits.",
       "category": "guidance",
       "severity": "high",
       "actionable": true,
-      "action": "Review and patch SSO systems",
+      "action": "Review and mitigate SAML flaws",
       "source": "Identity at the Core",
       "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-09-07"
+      "date": "2026-09-11"
     },
     {
-      "title": "Okta OIDC Token Bypass Vulnerability",
-      "summary": "Token validation flaw allows auth bypass.",
+      "title": "CVE-2026-28391: Okta OIDC Token Bypass",
+      "summary": "Token validation flaw allows authentication bypass.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply vendor patch",
+      "action": "Apply patches immediately",
       "source": "Identity at the Core",
       "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-09-07"
+      "date": "2026-09-11"
     },
     {
-      "title": "PingFederate XXE Vulnerability",
+      "title": "CVE-2026-29104: PingFederate XXE Vulnerability",
       "summary": "XXE in SAML parser allows SSRF.",
       "category": "vulnerability",
-      "severity": "medium",
+      "severity": "high",
       "actionable": true,
-      "action": "Update to latest version",
+      "action": "Patch immediately",
       "source": "Identity at the Core",
       "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-09-07"
-    },
-    {
-      "title": "Azure AD B2C Policy Injection Vulnerability",
-      "summary": "Custom policy XML injection allows privilege escalation.",
-      "category": "vulnerability",
-      "severity": "medium",
-      "actionable": true,
-      "action": "Review and update policies",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-09-07"
+      "date": "2026-09-11"
     }
   ],
-  "generatedAt": "2026-09-07T13:19:36.138Z"
+  "generatedAt": "2026-09-14T13:42:54.131Z"
 }
