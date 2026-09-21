@@ -1920,5 +1920,73 @@
         ]
       }
     ]
+  },
+  {
+    "title": "The Expired Certificate",
+    "premise": "They can't renew an expired certificate without logging in, but the expired certificate blocks login.",
+    "panels": [
+      {
+        "cap": "Monday Morning Dilemma",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Can you log in to renew the certificate?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "No, the expired cert blocks the login.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Call support for help?",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "They verify identity using... the cert.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Any emergency fallback?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "In theory. Nobody remembers it.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": "Loop of Desperation",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "It's gonna be a long week.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]

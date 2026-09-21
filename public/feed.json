@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "CVE-2026-31847: Critical RCE in FortiAuthenticator",
-      "summary": "Unauthenticated RCE via crafted RADIUS packet.",
+      "title": "Cisco ISE Zero-Day Vulnerability CVE-2026-76460",
+      "summary": "Critical flaw allows unauthenticated access via API.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Patch immediately",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-09-11"
+      "action": "Apply patch immediately",
+      "source": "Cisco",
+      "url": "https://www.cisco.com/c/en/us/support/docs/csa/cisco-sa-ise-multi-hrP9jQSQ.html",
+      "date": "2026-09-16"
     },
     {
-      "title": "Okta Security Advisory: Multiple Vulnerabilities",
-      "summary": "Multiple vulnerabilities in Okta products identified.",
-      "category": "vendor",
-      "severity": "high",
-      "actionable": true,
-      "action": "Review advisories and update",
-      "source": "Okta Support",
-      "url": "https://support.okta.com/help/s/article/security-advisory-summary-september-2026",
-      "date": "2026-09-08"
-    },
-    {
-      "title": "CISA Advisory: Active Exploitation of SAML Flaws",
-      "summary": "CISA warns of active SAML implementation exploits.",
+      "title": "CISA Adds CVE-2026-76460 to KEV Catalog",
+      "summary": "Mandates federal agencies to patch by Sept 19.",
       "category": "guidance",
       "severity": "high",
       "actionable": true,
-      "action": "Review and mitigate SAML flaws",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-09-11"
+      "action": "Ensure systems are patched",
+      "source": "CISA",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "date": "2026-09-16"
     },
     {
-      "title": "CVE-2026-28391: Okta OIDC Token Bypass",
-      "summary": "Token validation flaw allows authentication bypass.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply patches immediately",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-09-11"
-    },
-    {
-      "title": "CVE-2026-29104: PingFederate XXE Vulnerability",
-      "summary": "XXE in SAML parser allows SSRF.",
+      "title": "FortiAuthenticator RCE Vulnerability CVE-2026-31847",
+      "summary": "Critical RCE via crafted RADIUS packet.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
       "action": "Patch immediately",
+      "source": "Fortinet",
+      "url": "https://www.identityatcore.org/vulnerabilities",
+      "date": "2026-09-11"
+    },
+    {
+      "title": "Healthcare Provider Exposes 2.3M Records via SCIM Endpoint",
+      "summary": "Misconfiguration leads to massive data breach.",
+      "category": "breach",
+      "severity": "high",
+      "actionable": true,
+      "action": "Review SCIM configurations",
       "source": "Identity at the Core",
       "url": "https://www.identityatcore.org/vulnerabilities",
       "date": "2026-09-11"
+    },
+    {
+      "title": "Okta Releases Security Updates for Multiple Products",
+      "summary": "Addresses vulnerabilities in Access Gateway, Verify, and others.",
+      "category": "vendor",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Review and apply updates",
+      "source": "Okta",
+      "url": "https://notcve.org/vendors/okta/",
+      "date": "2026-09-18"
     }
   ],
-  "generatedAt": "2026-09-14T13:42:54.131Z"
+  "generatedAt": "2026-09-21T13:41:43.704Z"
 }
