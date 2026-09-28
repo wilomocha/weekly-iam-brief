@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "Cisco ISE Zero-Day Vulnerability CVE-2026-76460",
-      "summary": "Critical flaw allows unauthenticated access via API.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply patch immediately",
-      "source": "Cisco",
-      "url": "https://www.cisco.com/c/en/us/support/docs/csa/cisco-sa-ise-multi-hrP9jQSQ.html",
-      "date": "2026-09-16"
-    },
-    {
-      "title": "CISA Adds CVE-2026-76460 to KEV Catalog",
-      "summary": "Mandates federal agencies to patch by Sept 19.",
+      "title": "NSA Advisory: Detecting and Mitigating Active Directory Compromises",
+      "summary": "Guidance on detecting and mitigating Active Directory compromises.",
       "category": "guidance",
       "severity": "high",
       "actionable": true,
-      "action": "Ensure systems are patched",
-      "source": "CISA",
-      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-      "date": "2026-09-16"
+      "action": "Review and implement NSA recommendations.",
+      "source": "NSA",
+      "url": "https://www.nsa.gov/Cybersecurity/Cybersecurity-Advisories-Guidance/",
+      "date": "2026-09-15"
     },
     {
-      "title": "FortiAuthenticator RCE Vulnerability CVE-2026-31847",
-      "summary": "Critical RCE via crafted RADIUS packet.",
-      "category": "vulnerability",
-      "severity": "high",
+      "title": "Microsoft Entra Security Operations for Applications",
+      "summary": "Best practices for securing applications in Microsoft Entra.",
+      "category": "guidance",
+      "severity": "medium",
       "actionable": true,
-      "action": "Patch immediately",
-      "source": "Fortinet",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-09-11"
+      "action": "Implement recommended security operations.",
+      "source": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-applications",
+      "date": "2026-09-21"
     },
     {
-      "title": "Healthcare Provider Exposes 2.3M Records via SCIM Endpoint",
-      "summary": "Misconfiguration leads to massive data breach.",
-      "category": "breach",
-      "severity": "high",
-      "actionable": true,
-      "action": "Review SCIM configurations",
-      "source": "Identity at the Core",
-      "url": "https://www.identityatcore.org/vulnerabilities",
-      "date": "2026-09-11"
-    },
-    {
-      "title": "Okta Releases Security Updates for Multiple Products",
-      "summary": "Addresses vulnerabilities in Access Gateway, Verify, and others.",
+      "title": "Microsoft Defender for Identity XDR Security Alerts",
+      "summary": "New XDR security alerts for identity threats.",
       "category": "vendor",
       "severity": "medium",
       "actionable": true,
-      "action": "Review and apply updates",
-      "source": "Okta",
-      "url": "https://notcve.org/vendors/okta/",
-      "date": "2026-09-18"
+      "action": "Monitor and respond to new alerts.",
+      "source": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/defender-for-identity/alerts-xdr",
+      "date": "2026-09-22"
+    },
+    {
+      "title": "GitHub Advisory Database Updates",
+      "summary": "Recent security advisories for open-source software.",
+      "category": "vulnerability",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Review and address relevant advisories.",
+      "source": "GitHub",
+      "url": "https://github.com/advisories",
+      "date": "2026-09-14"
+    },
+    {
+      "title": "NSA Guidance on Authentication Mechanism Abuse",
+      "summary": "Advisory on detecting abuse of authentication mechanisms.",
+      "category": "guidance",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Implement NSA's detection and mitigation strategies.",
+      "source": "NSA",
+      "url": "https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/2451159/nsa-cybersecurity-advisory-malicious-actors-abuse-authentication-mechanisms-to/",
+      "date": "2026-09-20"
     }
   ],
-  "generatedAt": "2026-09-21T13:41:43.704Z"
+  "generatedAt": "2026-09-28T15:01:00.440Z"
 }

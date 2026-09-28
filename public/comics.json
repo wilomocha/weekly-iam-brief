@@ -1988,5 +1988,79 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Ghost Permissions Gone Wild",
+    "premise": "Permissions are set by a mystery team nobody knows.",
+    "panels": [
+      {
+        "cap": "Engineering Dungeon",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Got another unlock request?",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Yep, mystery permissions again.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Who sets these permissions?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Nobody knows. They just appear.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": "C joins the conversation",
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "Isn't it our job to know?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Exactly, but here we are.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "So... ghost permissions?",
+            "emotion": "shocked"
+          },
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Ghost team strikes again.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
