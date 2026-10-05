@@ -2062,5 +2062,73 @@
         ]
       }
     ]
+  },
+  {
+    "title": "The Infinite Loop Logins",
+    "premise": "A login system redirects back to itself endlessly.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Why can't I log in today?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "System says you're not verified.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "But I need to log in to verify.",
+            "emotion": "angry"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Yeah, it's a new feature.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "IT calls it 'Infinite Loop Protection.'",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "I call it a paradox.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "At least it's secure.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
