@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "CVE-2026-69836: Microsoft Entra ID Critical Vulnerability",
-      "summary": "Deserialization flaw allows unauthenticated remote code execution.",
+      "title": "Microsoft Entra ID to Default to Passkeys for Authentication",
+      "summary": "Entra ID will default to passkeys, phasing out SMS/voice authentication.",
+      "category": "vendor",
+      "severity": "high",
+      "actionable": true,
+      "action": "Transition users to passkeys.",
+      "source": "Microsoft",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/07/13/microsoft-entra-id-security-updates-passkeys-are-the-default-authentication-method-in-entra-id/",
+      "date": "2026-07-13"
+    },
+    {
+      "title": "Okta Security Advisory Summary: September 2026",
+      "summary": "Multiple vulnerabilities identified in Okta products; updates available.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply latest Microsoft patches.",
-      "source": "CTIWatch",
-      "url": "https://ctiwatch.com/vulnerabilities/CVE-2026-69836",
-      "date": "2026-08-20"
+      "action": "Apply latest Okta updates.",
+      "source": "Okta",
+      "url": "https://support.okta.com/help/s/article/security-advisory-summary-september-2026",
+      "date": "2026-09-10"
     },
     {
-      "title": "CVE-2026-56155: Microsoft ADFS Privilege Escalation",
-      "summary": "Low-privileged users can forge SAML tokens, bypassing MFA.",
+      "title": "Okta Security Advisories: Multiple CVEs Published",
+      "summary": "Several CVEs affecting Okta products disclosed; patches released.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Install KB patch; rotate signing certificates.",
-      "source": "CyberSecureToday",
-      "url": "https://cybersecuretoday.com/article/microsoft-adfs-cloud-identity-bypass-cve-2026-56155-cisa-kev",
-      "date": "2026-09-16"
+      "action": "Review and apply patches.",
+      "source": "Okta",
+      "url": "https://trust.okta.com/security-advisories/",
+      "date": "2026-09-08"
     },
     {
-      "title": "Cisco Identity Services Engine Multiple Vulnerabilities",
-      "summary": "Critical flaws allow remote code execution and privilege escalation.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply Cisco's security updates immediately.",
-      "source": "Cisco",
-      "url": "https://www.cisco.com/c/en/us/support/docs/csa/cisco-sa-ise-multi-hrP9jQSQ.html",
-      "date": "2026-09-16"
-    },
-    {
-      "title": "Microsoft Azure and Entra ID Multiple Vulnerabilities",
-      "summary": "Flaws enable privilege escalation and arbitrary code execution.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply all available Microsoft security updates.",
-      "source": "CSIRTS",
-      "url": "https://www.csirts.com/advisory/microsoft-azure-and-entra-id-multiple-1653908",
-      "date": "2026-08-12"
-    },
-    {
-      "title": "CVE-2026-84672: Jenkins Entra ID Plugin Vulnerability",
-      "summary": "Attackers can create groups to gain unauthorized permissions.",
-      "category": "vulnerability",
+      "title": "Microsoft Defender for Identity: New Security Alerts Added",
+      "summary": "Defender for Identity introduces new alerts for Entra ID activities.",
+      "category": "vendor",
       "severity": "medium",
       "actionable": true,
-      "action": "Update to latest Jenkins plugin version.",
-      "source": "TheHackerWire",
-      "url": "https://www.thehackerwire.com/vulnerability/CVE-2026-84672/",
-      "date": "2026-09-02"
+      "action": "Review and configure new alerts.",
+      "source": "Microsoft",
+      "url": "https://learn.microsoft.com/th-th/defender-for-identity/whats-new",
+      "date": "2026-06-01"
+    },
+    {
+      "title": "Okta Identity Security Posture Management Adds AI Agent Discovery",
+      "summary": "ISPM now includes AI agent discovery and risk assessment features.",
+      "category": "vendor",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Enable and monitor AI agent discovery.",
+      "source": "Okta",
+      "url": "https://help.okta.com/ispm/en-us/content/topics/releasenotes/ispm/ispm-rn.htm",
+      "date": "2026-09-01"
     }
   ],
-  "generatedAt": "2026-10-05T15:37:01.636Z"
+  "generatedAt": "2026-10-12T16:32:38.577Z"
 }

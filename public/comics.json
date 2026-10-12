@@ -2130,5 +2130,73 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Biometric Boondoggle",
+    "premise": "The new biometric login requires finger gymnasts.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Have you tried the new login scanner?",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Yeah, what's up with it?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "It needs two fingers and an ear.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Sounds awkward.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Apparently, it's for 'extra security.'",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Or extra workouts.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "My pinky got rejected.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
