@@ -2198,5 +2198,79 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Locked Out of Lockout",
+    "premise": "Lockout policy requires access you can't get without breaking the policy.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "I'm locked out. Need policy override.",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Override needs level you just lost.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Can't more secure than zero",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Exactly. Secure by inaccessibility",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Does anyone else have this catch-22?",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Not anymore.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Why not?",
+            "emotion": "shocked"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "They never got back in.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]

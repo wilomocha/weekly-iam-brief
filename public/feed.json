@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "Microsoft Entra ID to Default to Passkeys for Authentication",
-      "summary": "Entra ID will default to passkeys, phasing out SMS/voice authentication.",
+      "title": "Okta Security Advisories: October 2026",
+      "summary": "Multiple vulnerabilities in Okta products require immediate updates.",
       "category": "vendor",
       "severity": "high",
       "actionable": true,
-      "action": "Transition users to passkeys.",
+      "action": "Apply patches to Okta products.",
+      "source": "Okta",
+      "url": "https://support.okta.com/help/s/article/security-advisory-summary-october-2026?language=en_US",
+      "date": "2026-10-13"
+    },
+    {
+      "title": "LiteLLM Vulnerabilities Allow Admin Control and API Key Theft",
+      "summary": "Critical flaws in LiteLLM enable unauthorized access and key theft.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Update LiteLLM to version 1.83.9.",
+      "source": "TechRadar",
+      "url": "https://www.techradar.com/pro/security/security-flaws-found-in-top-open-source-ai-gateway-litellm-vulnerabilties-could-affect-millions-of-users",
+      "date": "2026-10-15"
+    },
+    {
+      "title": "IBM Security Verify Access Remote Code Execution Vulnerability",
+      "summary": "Critical flaw in IBM Security Verify Access allows remote code execution.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Apply IBM's security patch.",
+      "source": "InfoSecCenter",
+      "url": "https://www.infoseccenter.cloud/security/cve/CVE-2026-78406",
+      "date": "2026-10-08"
+    },
+    {
+      "title": "Microsoft Entra ID Adopts Passkeys as Default Authentication",
+      "summary": "Passkeys to replace SMS and voice authentication in Entra ID.",
+      "category": "vendor",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Prepare for passkey implementation.",
       "source": "Microsoft",
       "url": "https://www.microsoft.com/en-us/security/blog/2026/07/13/microsoft-entra-id-security-updates-passkeys-are-the-default-authentication-method-in-entra-id/",
       "date": "2026-07-13"
     },
     {
-      "title": "Okta Security Advisory Summary: September 2026",
-      "summary": "Multiple vulnerabilities identified in Okta products; updates available.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply latest Okta updates.",
-      "source": "Okta",
-      "url": "https://support.okta.com/help/s/article/security-advisory-summary-september-2026",
-      "date": "2026-09-10"
-    },
-    {
-      "title": "Okta Security Advisories: Multiple CVEs Published",
-      "summary": "Several CVEs affecting Okta products disclosed; patches released.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Review and apply patches.",
-      "source": "Okta",
-      "url": "https://trust.okta.com/security-advisories/",
-      "date": "2026-09-08"
-    },
-    {
-      "title": "Microsoft Defender for Identity: New Security Alerts Added",
-      "summary": "Defender for Identity introduces new alerts for Entra ID activities.",
-      "category": "vendor",
+      "title": "CISA Enhances CVE Program Framework",
+      "summary": "CISA introduces new framework to improve CVE program.",
+      "category": "guidance",
       "severity": "medium",
-      "actionable": true,
-      "action": "Review and configure new alerts.",
-      "source": "Microsoft",
-      "url": "https://learn.microsoft.com/th-th/defender-for-identity/whats-new",
-      "date": "2026-06-01"
-    },
-    {
-      "title": "Okta Identity Security Posture Management Adds AI Agent Discovery",
-      "summary": "ISPM now includes AI agent discovery and risk assessment features.",
-      "category": "vendor",
-      "severity": "medium",
-      "actionable": true,
-      "action": "Enable and monitor AI agent discovery.",
-      "source": "Okta",
-      "url": "https://help.okta.com/ispm/en-us/content/topics/releasenotes/ispm/ispm-rn.htm",
-      "date": "2026-09-01"
+      "actionable": false,
+      "action": "",
+      "source": "ITPro",
+      "url": "https://www.itpro.com/security/how-cisa-plans-to-shake-up-the-cve-program",
+      "date": "2026-09-28"
     }
   ],
-  "generatedAt": "2026-10-12T16:32:38.577Z"
+  "generatedAt": "2026-10-19T14:24:14.607Z"
 }
