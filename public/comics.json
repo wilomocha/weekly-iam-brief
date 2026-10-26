@@ -2272,5 +2272,67 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Supporting Ticketholes",
+    "premise": "Support tickets never actually reach IT; they vanish.",
+    "panels": [
+      {
+        "cap": "The Ticketing Abyss",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Did you submit a support ticket?",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Twice. It’s like they vanish.",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "There's a rumor. The 'ticket void'.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "So... they just disappear?",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Yep. No trace left.",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "We tried. IT's not even cc’d.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]

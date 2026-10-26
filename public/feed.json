@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "Okta Security Advisories: October 2026",
-      "summary": "Multiple vulnerabilities in Okta products require immediate updates.",
-      "category": "vendor",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply patches to Okta products.",
-      "source": "Okta",
-      "url": "https://support.okta.com/help/s/article/security-advisory-summary-october-2026?language=en_US",
-      "date": "2026-10-13"
-    },
-    {
-      "title": "LiteLLM Vulnerabilities Allow Admin Control and API Key Theft",
-      "summary": "Critical flaws in LiteLLM enable unauthorized access and key theft.",
+      "title": "CVE-2026-97785: Microsoft Entra Application Proxy Improper Authentication",
+      "summary": "Unauthenticated attackers can read and tamper with data in Entra Application Proxy.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Update LiteLLM to version 1.83.9.",
-      "source": "TechRadar",
-      "url": "https://www.techradar.com/pro/security/security-flaws-found-in-top-open-source-ai-gateway-litellm-vulnerabilties-could-affect-millions-of-users",
-      "date": "2026-10-15"
+      "action": "Apply patches immediately",
+      "source": "CVETodo",
+      "url": "https://cvetodo.com/cve/CVE-2026-97785",
+      "date": "2026-10-22"
     },
     {
-      "title": "IBM Security Verify Access Remote Code Execution Vulnerability",
-      "summary": "Critical flaw in IBM Security Verify Access allows remote code execution.",
+      "title": "CVE-2026-83941: Microsoft Entra Missing Authorization",
+      "summary": "Low-privileged users can escalate privileges in Microsoft Entra due to missing authorization checks.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply IBM's security patch.",
-      "source": "InfoSecCenter",
-      "url": "https://www.infoseccenter.cloud/security/cve/CVE-2026-78406",
-      "date": "2026-10-08"
+      "action": "Apply patches immediately",
+      "source": "CVETodo",
+      "url": "https://cvetodo.com/cve/CVE-2026-83941",
+      "date": "2026-09-08"
     },
     {
-      "title": "Microsoft Entra ID Adopts Passkeys as Default Authentication",
-      "summary": "Passkeys to replace SMS and voice authentication in Entra ID.",
-      "category": "vendor",
-      "severity": "medium",
+      "title": "CVE-2026-62916: Microsoft Entra Authentication Bypass",
+      "summary": "Unauthenticated attackers can bypass authentication in Microsoft Entra, leading to privilege escalation.",
+      "category": "vulnerability",
+      "severity": "high",
       "actionable": true,
-      "action": "Prepare for passkey implementation.",
-      "source": "Microsoft",
-      "url": "https://www.microsoft.com/en-us/security/blog/2026/07/13/microsoft-entra-id-security-updates-passkeys-are-the-default-authentication-method-in-entra-id/",
-      "date": "2026-07-13"
+      "action": "Apply patches immediately",
+      "source": "CVETodo",
+      "url": "https://cvetodo.com/cve/CVE-2026-62916",
+      "date": "2026-09-03"
     },
     {
-      "title": "CISA Enhances CVE Program Framework",
-      "summary": "CISA introduces new framework to improve CVE program.",
-      "category": "guidance",
-      "severity": "medium",
-      "actionable": false,
-      "action": "",
-      "source": "ITPro",
-      "url": "https://www.itpro.com/security/how-cisa-plans-to-shake-up-the-cve-program",
-      "date": "2026-09-28"
+      "title": "CVE-2026-84672: Jenkins Microsoft Entra ID Plugin Vulnerability",
+      "summary": "Attackers can create Entra groups with colliding display names to gain unauthorized permissions.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Update Jenkins plugin",
+      "source": "TheHackerWire",
+      "url": "https://www.thehackerwire.com/vulnerability/CVE-2026-84672/",
+      "date": "2026-09-02"
+    },
+    {
+      "title": "CVE-2026-56155: Microsoft ADFS Cloud Identity Privilege Escalation",
+      "summary": "Low-privileged users can forge SAML tokens, bypassing MFA across hybrid cloud tenants.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Apply patches and rotate certificates",
+      "source": "CyberSecureToday",
+      "url": "https://cybersecuretoday.com/article/microsoft-adfs-cloud-identity-bypass-cve-2026-56155-cisa-kev",
+      "date": "2026-09-16"
     }
   ],
-  "generatedAt": "2026-10-19T14:24:14.607Z"
+  "generatedAt": "2026-10-26T13:57:31.479Z"
 }
