@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "CVE-2026-97785: Microsoft Entra Application Proxy Improper Authentication",
-      "summary": "Unauthenticated attackers can read and tamper with data in Entra Application Proxy.",
+      "title": "DHS Breach Exposes 40,000 Staff Records",
+      "summary": "Hacktivists leaked DHS staff data; Okta credentials exploited.",
+      "category": "breach",
+      "severity": "high",
+      "actionable": true,
+      "action": "Review Okta access logs",
+      "source": "ITPro",
+      "url": "https://www.itpro.com/security/data-breaches/a-severe-operational-failure-that-places-the-physical-safety-of-undercover-personnel-at-direct-risk-hacktivist-group-leaks-data-on-40-000-department-of-homeland-security-staff",
+      "date": "2026-10-30"
+    },
+    {
+      "title": "Okta Access Gateway Command Execution Vulnerability",
+      "summary": "Critical flaw allows command execution via admin console input.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply patches immediately",
-      "source": "CVETodo",
-      "url": "https://cvetodo.com/cve/CVE-2026-97785",
+      "action": "Apply Okta patch",
+      "source": "Okta",
+      "url": "https://trust.okta.com/security-advisories/",
       "date": "2026-10-22"
     },
     {
-      "title": "CVE-2026-83941: Microsoft Entra Missing Authorization",
-      "summary": "Low-privileged users can escalate privileges in Microsoft Entra due to missing authorization checks.",
+      "title": "Microsoft Entra ID Remote Code Execution Vulnerability",
+      "summary": "Critical flaw enables unauthenticated remote code execution.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply patches immediately",
-      "source": "CVETodo",
-      "url": "https://cvetodo.com/cve/CVE-2026-83941",
-      "date": "2026-09-08"
+      "action": "Apply Microsoft patch",
+      "source": "The Register",
+      "url": "https://www.theregister.com/cyber-crime/2026/08/21/microsoft-sounds-alarm-over-perfect-10-entra-id-flaw/",
+      "date": "2026-08-21"
     },
     {
-      "title": "CVE-2026-62916: Microsoft Entra Authentication Bypass",
-      "summary": "Unauthenticated attackers can bypass authentication in Microsoft Entra, leading to privilege escalation.",
-      "category": "vulnerability",
+      "title": "CISA Adds Zammad, FortiMail, Cisco Flaws to KEV",
+      "summary": "CISA adds critical IAM vulnerabilities to Known Exploited Vulnerabilities catalog.",
+      "category": "guidance",
       "severity": "high",
       "actionable": true,
-      "action": "Apply patches immediately",
-      "source": "CVETodo",
-      "url": "https://cvetodo.com/cve/CVE-2026-62916",
-      "date": "2026-09-03"
+      "action": "Review CISA KEV catalog",
+      "source": "Daily CISO",
+      "url": "https://www.dailyciso.com/briefing/2026-10-03",
+      "date": "2026-10-03"
     },
     {
-      "title": "CVE-2026-84672: Jenkins Microsoft Entra ID Plugin Vulnerability",
-      "summary": "Attackers can create Entra groups with colliding display names to gain unauthorized permissions.",
-      "category": "vulnerability",
-      "severity": "high",
+      "title": "Agent Identity Stack Under Coordinated Attack",
+      "summary": "Multiple IAM providers face coordinated attacks exploiting 15 CVEs.",
+      "category": "trend",
+      "severity": "medium",
       "actionable": true,
-      "action": "Update Jenkins plugin",
-      "source": "TheHackerWire",
-      "url": "https://www.thehackerwire.com/vulnerability/CVE-2026-84672/",
-      "date": "2026-09-02"
-    },
-    {
-      "title": "CVE-2026-56155: Microsoft ADFS Cloud Identity Privilege Escalation",
-      "summary": "Low-privileged users can forge SAML tokens, bypassing MFA across hybrid cloud tenants.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply patches and rotate certificates",
-      "source": "CyberSecureToday",
-      "url": "https://cybersecuretoday.com/article/microsoft-adfs-cloud-identity-bypass-cve-2026-56155-cisa-kev",
-      "date": "2026-09-16"
+      "action": "Assess IAM security posture",
+      "source": "CryptoRank.io",
+      "url": "https://cryptorank.io/news/feed/5b969-four-providers-15-cves-three-days-the-agent-identity-stack-is-under-coordinated-attack",
+      "date": "2026-10-05"
     }
   ],
-  "generatedAt": "2026-10-26T13:57:31.479Z"
+  "generatedAt": "2026-11-02T16:52:00.386Z"
 }

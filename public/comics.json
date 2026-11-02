@@ -2334,5 +2334,55 @@
         ]
       }
     ]
+  },
+  {
+    "title": "The Orphaned API Key",
+    "premise": "An API key is found, but nobody knows its purpose.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Found an API key without notes.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Who owns it?",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "Nobody claims it.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Well, it's our problem now.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]
