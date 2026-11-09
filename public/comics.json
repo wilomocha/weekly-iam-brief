@@ -2384,5 +2384,61 @@
         ]
       }
     ]
+  },
+  {
+    "title": "Access Token Timewarp",
+    "premise": "Engineer's access token gets stuck in pre-expiry limbo.",
+    "panels": [
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "My access token says it expires soon.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Define 'soon'.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Yesterday. And tomorrow.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "So... Schrödinger's token?",
+            "emotion": "worried"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "C",
+            "side": "right",
+            "text": "It's both valid and expired.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]

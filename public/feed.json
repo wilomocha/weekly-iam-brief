@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "DHS Breach Exposes 40,000 Staff Records",
-      "summary": "Hacktivists leaked DHS staff data; Okta credentials exploited.",
+      "title": "Microsoft Entra Device Registration Authorization Bypass",
+      "summary": "Critical CVE-2026-109469 allows unauthorized privilege escalation.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Review logs for unauthorized device registrations.",
+      "source": "IT-SB",
+      "url": "https://www.it-sb.ch/en/cve.php?id=CVE-2026-109469",
+      "date": "2026-11-07"
+    },
+    {
+      "title": "Okta Access Gateway Command Injection Vulnerability",
+      "summary": "CVE-2026-115547 enables authenticated admins to execute system commands.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Upgrade to Okta Access Gateway 2026.10.2.",
+      "source": "Beyond IAM",
+      "url": "https://www.beyondiam.com/news/okta-patches-critical-access-gateway-flaw-allowing-system-command-execution",
+      "date": "2026-10-24"
+    },
+    {
+      "title": "ConnectWise Supply Chain Attack Targets Microsoft 365 Tenants",
+      "summary": "Attackers used AI agents to gain privileged access in under three hours.",
       "category": "breach",
       "severity": "high",
       "actionable": true,
-      "action": "Review Okta access logs",
-      "source": "ITPro",
-      "url": "https://www.itpro.com/security/data-breaches/a-severe-operational-failure-that-places-the-physical-safety-of-undercover-personnel-at-direct-risk-hacktivist-group-leaks-data-on-40-000-department-of-homeland-security-staff",
-      "date": "2026-10-30"
+      "action": "Disable affected application connections and review tenant logs.",
+      "source": "Tom's Hardware",
+      "url": "https://www.tomshardware.com/tech-industry/cyber-security/microsoft-says-china-aligned-hackers-used-ai-agents-in-connectwise-supply-chain-attack-agents-attempted-sign-ins-at-more-than-2-250-microsoft-365-tenants-with-some-of-the-groups-attacks-reaching-privileged-access-in-under-three-hours",
+      "date": "2026-10-26"
     },
     {
-      "title": "Okta Access Gateway Command Execution Vulnerability",
-      "summary": "Critical flaw allows command execution via admin console input.",
+      "title": "Microsoft Exchange Flaw Allows Unauthorized Mailbox Access",
+      "summary": "CVE-2026-96940 enables attackers to read mailboxes across an organization.",
       "category": "vulnerability",
       "severity": "high",
       "actionable": true,
-      "action": "Apply Okta patch",
-      "source": "Okta",
-      "url": "https://trust.okta.com/security-advisories/",
-      "date": "2026-10-22"
+      "action": "Apply the latest Exchange Server security update.",
+      "source": "TechRadar",
+      "url": "https://www.techradar.com/pro/security/microsoft-exchange-flaw-allows-hackers-to-read-mailboxes-across-an-organization-so-patch-now",
+      "date": "2026-10-02"
     },
     {
-      "title": "Microsoft Entra ID Remote Code Execution Vulnerability",
-      "summary": "Critical flaw enables unauthenticated remote code execution.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply Microsoft patch",
-      "source": "The Register",
-      "url": "https://www.theregister.com/cyber-crime/2026/08/21/microsoft-sounds-alarm-over-perfect-10-entra-id-flaw/",
-      "date": "2026-08-21"
-    },
-    {
-      "title": "CISA Adds Zammad, FortiMail, Cisco Flaws to KEV",
-      "summary": "CISA adds critical IAM vulnerabilities to Known Exploited Vulnerabilities catalog.",
+      "title": "CISA's 'Quality Era' Framework for CVE Program",
+      "summary": "CISA proposes enhancements to improve CVE data resilience and accuracy.",
       "category": "guidance",
-      "severity": "high",
-      "actionable": true,
-      "action": "Review CISA KEV catalog",
-      "source": "Daily CISO",
-      "url": "https://www.dailyciso.com/briefing/2026-10-03",
-      "date": "2026-10-03"
-    },
-    {
-      "title": "Agent Identity Stack Under Coordinated Attack",
-      "summary": "Multiple IAM providers face coordinated attacks exploiting 15 CVEs.",
-      "category": "trend",
       "severity": "medium",
-      "actionable": true,
-      "action": "Assess IAM security posture",
-      "source": "CryptoRank.io",
-      "url": "https://cryptorank.io/news/feed/5b969-four-providers-15-cves-three-days-the-agent-identity-stack-is-under-coordinated-attack",
-      "date": "2026-10-05"
+      "actionable": false,
+      "action": "",
+      "source": "ITPro",
+      "url": "https://www.itpro.com/security/how-cisa-plans-to-shake-up-the-cve-program",
+      "date": "2026-10-15"
     }
   ],
-  "generatedAt": "2026-11-02T16:52:00.386Z"
+  "generatedAt": "2026-11-09T17:13:11.665Z"
 }
