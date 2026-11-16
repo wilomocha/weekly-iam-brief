@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "Microsoft Entra Device Registration Authorization Bypass",
-      "summary": "Critical CVE-2026-109469 allows unauthorized privilege escalation.",
-      "category": "vulnerability",
-      "severity": "high",
+      "title": "Okta Security Advisory Summary: October 2026",
+      "summary": "Medium-severity vulnerabilities in Okta RADIUS Agent and MFA Credential Provider.",
+      "category": "vendor",
+      "severity": "medium",
       "actionable": true,
-      "action": "Review logs for unauthorized device registrations.",
-      "source": "IT-SB",
-      "url": "https://www.it-sb.ch/en/cve.php?id=CVE-2026-109469",
-      "date": "2026-11-07"
+      "action": "Apply patches immediately",
+      "source": "Okta Support",
+      "url": "https://support.okta.com/help/s/article/security-advisory-summary-october-2026?language=en_US",
+      "date": "2026-10-13"
     },
     {
-      "title": "Okta Access Gateway Command Injection Vulnerability",
-      "summary": "CVE-2026-115547 enables authenticated admins to execute system commands.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Upgrade to Okta Access Gateway 2026.10.2.",
-      "source": "Beyond IAM",
-      "url": "https://www.beyondiam.com/news/okta-patches-critical-access-gateway-flaw-allowing-system-command-execution",
-      "date": "2026-10-24"
-    },
-    {
-      "title": "ConnectWise Supply Chain Attack Targets Microsoft 365 Tenants",
-      "summary": "Attackers used AI agents to gain privileged access in under three hours.",
-      "category": "breach",
-      "severity": "high",
-      "actionable": true,
-      "action": "Disable affected application connections and review tenant logs.",
-      "source": "Tom's Hardware",
-      "url": "https://www.tomshardware.com/tech-industry/cyber-security/microsoft-says-china-aligned-hackers-used-ai-agents-in-connectwise-supply-chain-attack-agents-attempted-sign-ins-at-more-than-2-250-microsoft-365-tenants-with-some-of-the-groups-attacks-reaching-privileged-access-in-under-three-hours",
-      "date": "2026-10-26"
-    },
-    {
-      "title": "Microsoft Exchange Flaw Allows Unauthorized Mailbox Access",
-      "summary": "CVE-2026-96940 enables attackers to read mailboxes across an organization.",
-      "category": "vulnerability",
-      "severity": "high",
-      "actionable": true,
-      "action": "Apply the latest Exchange Server security update.",
-      "source": "TechRadar",
-      "url": "https://www.techradar.com/pro/security/microsoft-exchange-flaw-allows-hackers-to-read-mailboxes-across-an-organization-so-patch-now",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "CISA's 'Quality Era' Framework for CVE Program",
-      "summary": "CISA proposes enhancements to improve CVE data resilience and accuracy.",
+      "title": "Microsoft Entra Zero Trust: Accelerate Response and Remediation",
+      "summary": "Guidance on rapid threat detection and automated risk-based responses.",
       "category": "guidance",
       "severity": "medium",
-      "actionable": false,
-      "action": "",
-      "source": "ITPro",
-      "url": "https://www.itpro.com/security/how-cisa-plans-to-shake-up-the-cve-program",
-      "date": "2026-10-15"
+      "actionable": true,
+      "action": "Implement risk-based Conditional Access",
+      "source": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/zero-trust-response-remediation",
+      "date": "2025-09-01"
+    },
+    {
+      "title": "Microsoft Entra Security Operations Guide for Applications",
+      "summary": "Recommendations for monitoring and alerting on application events.",
+      "category": "guidance",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Review and implement monitoring strategies",
+      "source": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-applications",
+      "date": "2023-10-01"
+    },
+    {
+      "title": "Microsoft Entra Security Operations for Privileged Accounts",
+      "summary": "Guidance on securing privileged accounts in Microsoft Entra ID.",
+      "category": "guidance",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Implement recommended security operations",
+      "source": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-privileged-accounts",
+      "date": "2023-10-01"
+    },
+    {
+      "title": "Microsoft Entra External ID Deployment Guide for Security Operations",
+      "summary": "Security considerations for deploying Microsoft Entra External ID.",
+      "category": "guidance",
+      "severity": "medium",
+      "actionable": true,
+      "action": "Follow deployment security guidelines",
+      "source": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/entra/architecture/deployment-external-operations",
+      "date": "2023-10-01"
     }
   ],
-  "generatedAt": "2026-11-09T17:13:11.665Z"
+  "generatedAt": "2026-11-16T16:47:59.918Z"
 }

@@ -2440,5 +2440,79 @@
         ]
       }
     ]
+  },
+  {
+    "title": "The LDAP Labyrinth",
+    "premise": "An LDAP group that can't be escaped.",
+    "panels": [
+      {
+        "cap": "The Enigmatic LDAP Group",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "I tried leaving that LDAP group.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "But you're still in it?",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Apparently, it re-adds automatically.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Like an unkillable hydra.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "I think it's sentient.",
+            "emotion": "worried"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "The LDAP group?",
+            "emotion": "shocked"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "Yes, and it likes me too much.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "That's a bit unsettling.",
+            "emotion": "worried"
+          }
+        ]
+      }
+    ]
   }
 ]
