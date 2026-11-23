@@ -2514,5 +2514,61 @@
         ]
       }
     ]
+  },
+  {
+    "title": "The VPN Vortex",
+    "premise": "VPN access requires access not available due to itself.",
+    "panels": [
+      {
+        "cap": "Friday, 5:00 PM",
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "I need VPN access to reset my VPN.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "You need VPN? That's a VPN-only form.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "I can't access the form. I'm not on VPN.",
+            "emotion": "flat"
+          }
+        ]
+      },
+      {
+        "cap": null,
+        "beats": [
+          {
+            "speaker": "B",
+            "side": "right",
+            "text": "Then get on VPN.",
+            "emotion": "flat"
+          },
+          {
+            "speaker": "A",
+            "side": "left",
+            "text": "That's what I just said.",
+            "emotion": "flat"
+          }
+        ]
+      }
+    ]
   }
 ]

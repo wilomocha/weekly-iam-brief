@@ -1,60 +1,60 @@
 {
   "items": [
     {
-      "title": "Okta Security Advisory Summary: October 2026",
-      "summary": "Medium-severity vulnerabilities in Okta RADIUS Agent and MFA Credential Provider.",
+      "title": "VMware vCenter Server Critical Authentication Bypass Vulnerability",
+      "summary": "Critical flaw allows remote admin access; patch immediately.",
+      "category": "vulnerability",
+      "severity": "high",
+      "actionable": true,
+      "action": "Apply patch immediately",
+      "source": "TechRadar",
+      "url": "https://www.techradar.com/pro/security/vmware-tells-users-to-patch-critical-security-flaws-now-vcenter-issues-could-let-hackers-grab-access-to-your-systems",
+      "date": "2026-11-20"
+    },
+    {
+      "title": "Infoblox SharePoint Breach Exposes Sensitive Data",
+      "summary": "Attackers accessed SharePoint via third-party credentials.",
+      "category": "breach",
+      "severity": "high",
+      "actionable": true,
+      "action": "Review third-party access controls",
+      "source": "TechRadar",
+      "url": "https://www.techradar.com/pro/security/infoblox-confirms-company-and-customer-data-exposed-in-sharepoint-breach",
+      "date": "2026-11-17"
+    },
+    {
+      "title": "Fortinet Releases Patches for Multiple IAM Vulnerabilities",
+      "summary": "Patches address critical vulnerabilities in FortiAuthenticator.",
       "category": "vendor",
-      "severity": "medium",
+      "severity": "high",
       "actionable": true,
-      "action": "Apply patches immediately",
-      "source": "Okta Support",
-      "url": "https://support.okta.com/help/s/article/security-advisory-summary-october-2026?language=en_US",
-      "date": "2026-10-13"
+      "action": "Update FortiAuthenticator immediately",
+      "source": "CyberCVE",
+      "url": "https://www.cybercve.com/categories/identity",
+      "date": "2026-11-11"
     },
     {
-      "title": "Microsoft Entra Zero Trust: Accelerate Response and Remediation",
-      "summary": "Guidance on rapid threat detection and automated risk-based responses.",
-      "category": "guidance",
+      "title": "Irish Credit Unions Affected by IT Provider Data Breach",
+      "summary": "Breach at Wellington IT impacts credit unions.",
+      "category": "breach",
       "severity": "medium",
       "actionable": true,
-      "action": "Implement risk-based Conditional Access",
-      "source": "Microsoft Learn",
-      "url": "https://learn.microsoft.com/en-us/entra/fundamentals/zero-trust-response-remediation",
-      "date": "2025-09-01"
+      "action": "Assess supply chain security",
+      "source": "ITPro",
+      "url": "https://www.itpro.com/cyber-resilience/data-breaches/irish-credit-unions-hit-by-data-breach-after-it-provider-compromised",
+      "date": "2026-11-19"
     },
     {
-      "title": "Microsoft Entra Security Operations Guide for Applications",
-      "summary": "Recommendations for monitoring and alerting on application events.",
+      "title": "CISA Proposes 'Quality Era' Framework for CVE Program",
+      "summary": "Framework aims to improve CVE data reliability.",
       "category": "guidance",
       "severity": "medium",
-      "actionable": true,
-      "action": "Review and implement monitoring strategies",
-      "source": "Microsoft Learn",
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-applications",
-      "date": "2023-10-01"
-    },
-    {
-      "title": "Microsoft Entra Security Operations for Privileged Accounts",
-      "summary": "Guidance on securing privileged accounts in Microsoft Entra ID.",
-      "category": "guidance",
-      "severity": "medium",
-      "actionable": true,
-      "action": "Implement recommended security operations",
-      "source": "Microsoft Learn",
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/security-operations-privileged-accounts",
-      "date": "2023-10-01"
-    },
-    {
-      "title": "Microsoft Entra External ID Deployment Guide for Security Operations",
-      "summary": "Security considerations for deploying Microsoft Entra External ID.",
-      "category": "guidance",
-      "severity": "medium",
-      "actionable": true,
-      "action": "Follow deployment security guidelines",
-      "source": "Microsoft Learn",
-      "url": "https://learn.microsoft.com/en-us/entra/architecture/deployment-external-operations",
-      "date": "2023-10-01"
+      "actionable": false,
+      "action": "",
+      "source": "ITPro",
+      "url": "https://www.itpro.com/security/cisas-cve-program-shake-up-what-does-it-mean-for-businesses",
+      "date": "2026-11-19"
     }
   ],
-  "generatedAt": "2026-11-16T16:47:59.918Z"
+  "generatedAt": "2026-11-23T19:00:46.351Z"
 }
